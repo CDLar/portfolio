@@ -6,6 +6,7 @@ import { FaBars, FaTimes, FaGithubAlt, FaMobileAlt, FaUser, FaHome } from 'react
 const Main = styled.div`
 background-color:${props => props.theme.elevated};
 overflow:hidden;
+height:100vh;
 `
 
 const MenuToggle = styled.span`
@@ -99,7 +100,7 @@ cursor:pointer;
 `
 
 const Content = styled.main`
-height:200%;
+height:200vh;
 overflow:auto;
 transform-origin: top left;
 transition: transform 0.7s cubic-bezier(1,0.005,0.24,1);
@@ -110,11 +111,7 @@ ${ props => props.isOpen && css`
 `
 
 const ContentInner = styled.div`
-height:50%;
 padding: 50px 20%;
-display:flex;
-flex-direction:column;
-flex-wrap:nowrap;
 `
 
 const iconStyles = `
