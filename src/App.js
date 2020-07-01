@@ -6,7 +6,7 @@ import { FaBars, FaTimes, FaGithubAlt, FaMobileAlt, FaUser, FaHome } from 'react
 const Main = styled.div`
 height:100%;
 overflow:hidden;
-background-color:#584e4a;
+background-color:${props => props.theme.elevated};
 `
 
 const MenuToggle = styled.span`
@@ -18,34 +18,34 @@ display:block;
 cursor:pointer;
 width:6.25em;
 height:5em;
-background-color:#f37272;
+background-color:${props => props.theme.primary};
 border-bottom-right-radius:100%;
-
-&:active{
-  opacity:0.8;
-}
 `
 
 const StyledOpen = styled(FaBars)`
 position:absolute;
 top:50%;
 left:50%;
+font-size:1.2rem;
 margin-top: -15px;
 margin-left: -12px;
-transition: transform 0.7s cubic-bezier()(1,0.005,0.24,1);
+transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
 transform-origin: -100px -100px;
-transform: ${props => props.isOpen ? 'rotate(-20deg)' : 'none'};
+${ props => props.isOpen && css`
+    transform: rotate(-20deg);
+  `}
 `
 
 const StyledClose = styled(FaTimes)`
 position:absolute;
 top:50%;
 left:50%;
+font-size:1.2rem;
 margin-top: -15px;
 margin-left: -12px;
-transition: transform 0.7s cubic-bezier()(1,0.005,0.24,1);
+transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
 transform-origin: -100px -160px;
-transform: ${props => props.isOpen ? 'rotate(0deg)' : 'rotate (20deg)'};
+transform: ${props => props.isOpen ? 'rotate(0deg)' : 'rotate(20deg)'};
 `
 
 const MenuItems = styled.ul`
@@ -88,11 +88,12 @@ display:flex;
 text-decoration:none;
 text-transform: uppercase;
 letter-spacing: 2px;
-color: #a4a4a4;
+color: ${props => props.theme.medium};
 transition: color 0.2s;
 
 &:hover{
-color: #f0f0f0;
+color: ${props => props.theme.high};
+cursor:pointer;
 }
 `
 
@@ -100,14 +101,14 @@ const Content = styled.main`
 height:200%;
 transform-origin: top left;
 transition: transform 0.7s cubic-bezier(1,0.005,0.24,1);
-background-color:#f0f0f0;
+background-color:${props => props.theme.background};
 ${ props => props.isOpen && css`
     transform: rotate(-30deg);
   `}
 `
 
 const ContentInner = styled.div`
-height:50%;
+height:100%;
 overflow-y:auto;
 padding: 50px 20%;
 `
@@ -118,21 +119,7 @@ width:2em;
 height:2em;
 display: inline-block;
 margin-right: 25px;
-color: #f0f0f0;
-&:after{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  content: '';
-  display: block;
-  width: 60px;
-  height: 60px;
-  margin-left: -33px;
-  margin-top: -32px;
-  border-radius: 100%;
-  border: 2px solid #f0f0f0;
-  transition: border-color 0.2s;
-}
+color: rgba(255,255,255,0.87);
 `
 
 const StyledHome = styled(FaHome)`
@@ -193,6 +180,8 @@ function App() {
       <Content isOpen={isOpen}>
         <ContentInner>
           <h1>Amazing design Exclusive</h1>
+          <br /><br />
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
           <br /><br />
           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
           <br /><br />
