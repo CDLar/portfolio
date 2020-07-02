@@ -6,6 +6,7 @@ html, body, #root{
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     color:rgba(255,255,255,0.87);
+    background-color:#171F24;
 }
 
 * {

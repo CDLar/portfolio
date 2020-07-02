@@ -4,6 +4,8 @@ import App from './App';
 import GlobalStyles from './themes/GlobalStyles'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './themes/theme'
+import About from './components/About'
+import Footer from'./components/Footer'
 
 ReactDOM.render(
   <React.StrictMode>
