@@ -97,8 +97,6 @@ color:${props => props.theme.high};
 transition: .5s;
 margin: 0 10px;
 cursor:pointer;
-transform-origin:top;
-border-left:0px solid red;
 &::before{
     content:'';
     display:block;
@@ -173,7 +171,7 @@ const Footer = () => {
         <Wrapper>
             <FooterHeader>Thanks!</FooterHeader>
             <FooterSubheader>Want to get in touch?</FooterSubheader>
-            <ContactButton> <AiOutlineMail style={{ marginRight: '1em' }} /> Contact Me</ContactButton>
+            {/* <ContactButton>  Contact Me</ContactButton> */}
             <SocialWrapper>
                 <SocialLink>
                     <SocialInner>
