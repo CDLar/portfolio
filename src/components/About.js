@@ -1,17 +1,13 @@
 import React from 'react';
 import styled from 'styled-components'
 import { FaReact, FaJs, FaHtml5, FaCss3Alt } from "react-icons/fa";
-import Footer from './Footer'
 import Fade from 'react-reveal/Fade';
 
 const Wrapper = styled.div`
 background-color:${props => props.theme.background};
-height:auto;
-min-height:100vh;
 width:100%;
 display:flex;
 flex-direction:column;
-justify-content:space-around;
 align-items:center;
 padding:0 15%;
 `
@@ -21,6 +17,7 @@ width:100%;
 display:flex;
 justify-content:center;
 align-items:center;
+margin: 4em 0;
 `
 
 const Header = styled.h1`
@@ -28,6 +25,7 @@ color: ${props => props.theme.high};
 font-size:2.5rem;
 text-transform: uppercase;
 font-weight:700;
+margin-top:1.5em;
 font-family: 'Raleway', sans-serif;
 letter-spacing: 2px;
 &:after {
@@ -83,6 +81,7 @@ display:flex;
 flex-wrap:nowrap;
 justify-content:center;
 align-items:center;
+margin-bottom:4em;
 `
 
 const TextPrimary = styled.h2`
@@ -93,9 +92,14 @@ letter-spacing:1.5px;
 `
 
 const TextSecondary = styled.p`
-font-size:1rem;
-margin-bottom:2em;
+font-size:0.9rem;
+margin:0 1em 2em 1em;
 color: ${props => props.theme.medium};
+max-width:25em;
+`
+
+const ColorText = styled.span`
+color:${props => props.theme.primaryV};
 `
 
 const About = () => {
@@ -159,16 +163,21 @@ const About = () => {
                 </CardWrapper>
                 <InfoWrapper>
                     <Fade left>
-                        <TextPrimary>Driven, Self-Motivated, Problem-Solver, Critical Thinker.</TextPrimary>
+                        <TextPrimary>Driven, Self-Motivated, Problem Solver, Critical Thinker.</TextPrimary>
                     </Fade>
                 </InfoWrapper>
                 <InfoWrapper>
                     <Fade left>
-                        <TextSecondary>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</TextSecondary>
+                        <TextSecondary>I'm a Canadian currently residing in Auckland, NZ.
+I have serious passion for animations, UI effects, and creating dynamic, intuitive user experiences. I started off designing websites using basic <ColorText>HTML5</ColorText>.
+</TextSecondary>
+                        <TextSecondary> Ever since deciding to code professionally <ColorText>ReactJS</ColorText> has been my main focus and everything else that I have studied has been with
+                        the purpose of furthering my understanding of it.  </TextSecondary>
+                        <TextSecondary>I have also studied <ColorText>JavaScript</ColorText> extensively to increase the functionality/effeciency of my code and <ColorText>CSS3</ColorText>,
+including libraries such as Styled Components, SASS, and CSS modules to create clean, modern designs. </TextSecondary>
                     </Fade>
                 </InfoWrapper>
             </Wrapper>
-            <Footer />
         </>
     );
 }

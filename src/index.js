@@ -5,13 +5,14 @@ import GlobalStyles from './themes/GlobalStyles'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './themes/theme'
 import About from './components/About'
-import Footer from'./components/Footer'
+import Home from './components/Home'
+import Projects from './components/Projects'
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
     <ThemeProvider theme={theme}>
-      <About />
+      <Projects />
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

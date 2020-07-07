@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
-import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 
 const Wrapper = styled.div`
 background-color:${props => props.theme.elevated};
-min-height:70vh;
-height:auto;
 width:100%;
-padding-top:10vh;
+padding: 10em 0 7em 0;
 display:flex;
 flex-direction:column;
 justify-content:center;
