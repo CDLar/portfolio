@@ -8,7 +8,6 @@ const Main = styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
-  border-bottom:1px solid;
   border-color: ${props => props.theme.medium};
 `;
 
@@ -20,12 +19,23 @@ text-align:center;
 
 const Header = styled.h1`
 font-family:'raleway';
-font-size:3rem;
+font-size:4rem;
 font-weight:400;
+`
+
+const SubHeader = styled.h1`
+font-family:'raleway';
+font-size:2.5rem;
+font-weight:400;
+margin-top:0.3em;
 `
 
 const ColorText = styled.span`
 color:${props => props.theme.primary};
+`
+
+const SubColorText = styled.span`
+color:${props => props.theme.primaryV};
 `
 const Home = () => {
     return (
@@ -33,7 +43,7 @@ const Home = () => {
             <Main>
                 <TextWrapper>
                     <Header>Hello, I'm <ColorText>Curtis Larsen.</ColorText></Header>
-                    <Header>I'm a front-end developer.</Header>
+                    <SubHeader>I'm a <SubColorText>front-end</SubColorText> developer from <SubColorText>Ottawa.</SubColorText></SubHeader>
                 </TextWrapper>
             </Main>
             <div class="area" >

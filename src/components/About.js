@@ -102,84 +102,82 @@ const ColorText = styled.span`
 color:${props => props.theme.primaryV};
 `
 
-const About = () => {
+const About = ({ ref }) => {
     return (
-        <>
-            <Wrapper>
-                <Header>About</Header>
-                <CardWrapper>
-                    <Card>
-                        <IconContainer>
-                            <FaReact size={70} />
-                        </IconContainer>
-                        <CardContent>
-                            <CardText>
-                                React
+        <Wrapper ref={ref}>
+            <Header>About</Header>
+            <CardWrapper>
+                <Card>
+                    {console.log(ref)}
+                    <IconContainer>
+                        <FaReact size={70} />
+                    </IconContainer>
+                    <CardContent>
+                        <CardText>
+                            React
                         </CardText>
-                            <CardSubtext>
-                                Focus: Primary
+                        <CardSubtext>
+                            Focus: Primary
                         </CardSubtext>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <IconContainer>
-                            <FaJs size={70} />
-                        </IconContainer>
-                        <CardContent>
-                            <CardText>
-                                Js
+                    </CardContent>
+                </Card>
+                <Card>
+                    <IconContainer>
+                        <FaJs size={70} />
+                    </IconContainer>
+                    <CardContent>
+                        <CardText>
+                            Js
                         </CardText>
-                            <CardSubtext>
-                                Focus: Secondary
+                        <CardSubtext>
+                            Focus: Secondary
                         </CardSubtext>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <IconContainer>
-                            <FaCss3Alt size={70} />
-                        </IconContainer>
-                        <CardContent>
-                            <CardText>
-                                CSS3
+                    </CardContent>
+                </Card>
+                <Card>
+                    <IconContainer>
+                        <FaCss3Alt size={70} />
+                    </IconContainer>
+                    <CardContent>
+                        <CardText>
+                            CSS3
                         </CardText>
-                            <CardSubtext>
-                                Focus: Secondary
+                        <CardSubtext>
+                            Focus: Secondary
                         </CardSubtext>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <IconContainer>
-                            <FaHtml5 size={70} />
-                        </IconContainer>
-                        <CardContent>
-                            <CardText>
-                                HTML5
+                    </CardContent>
+                </Card>
+                <Card>
+                    <IconContainer>
+                        <FaHtml5 size={70} />
+                    </IconContainer>
+                    <CardContent>
+                        <CardText>
+                            HTML5
                         </CardText>
-                            <CardSubtext>
-                                Focus: Tertiary
+                        <CardSubtext>
+                            Focus: Tertiary
                         </CardSubtext>
-                        </CardContent>
-                    </Card>
-                </CardWrapper>
-                <InfoWrapper>
-                    <Fade left>
-                        <TextPrimary>Driven, Self-Motivated, Problem Solver, Critical Thinker.</TextPrimary>
-                    </Fade>
-                </InfoWrapper>
-                <InfoWrapper>
-                    <Fade left>
-                        <TextSecondary>I'm a Canadian currently residing in Auckland, NZ.
+                    </CardContent>
+                </Card>
+            </CardWrapper>
+            <InfoWrapper>
+                <Fade left>
+                    <TextPrimary>Driven, Self-Motivated, Problem Solver, Critical Thinker.</TextPrimary>
+                </Fade>
+            </InfoWrapper>
+            <InfoWrapper>
+                <Fade left>
+                    <TextSecondary>I'm a Canadian currently residing in Auckland, NZ.
 I have serious passion for animations, UI effects, and creating dynamic, intuitive user experiences. I started off designing websites using basic <ColorText>HTML5</ColorText>.
 </TextSecondary>
-                        <TextSecondary> Ever since deciding to code professionally <ColorText>ReactJS</ColorText> has been my main focus and everything else that I have studied has been with
+                    <TextSecondary> Ever since deciding to code professionally <ColorText>ReactJS</ColorText> has been my main focus and everything else that I have studied has been with
                         the purpose of furthering my understanding of it.  </TextSecondary>
-                        <TextSecondary>I have also studied <ColorText>JavaScript</ColorText> extensively to increase the functionality/effeciency of my code and <ColorText>CSS3</ColorText>,
+                    <TextSecondary>I have also studied <ColorText>JavaScript</ColorText> extensively to increase the functionality/effeciency of my code and <ColorText>CSS3</ColorText>,
 including libraries such as Styled Components, SASS, and CSS modules to create clean, modern designs. </TextSecondary>
-                    </Fade>
-                </InfoWrapper>
-            </Wrapper>
-        </>
+                </Fade>
+            </InfoWrapper>
+        </Wrapper>
     );
 }
-
 export default About;

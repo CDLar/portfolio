@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled, { css } from 'styled-components'
 import { FaBars, FaTimes, FaGithubAlt, FaMobileAlt, FaUser, FaHome } from 'react-icons/fa'
 import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
+import Projects from './components/Projects'
 
 
 //SC Styles
@@ -138,24 +139,27 @@ ${iconStyles}
 const StyledContact = styled(FaMobileAlt)`
 ${iconStyles}
 `
-const P = styled.p`
-color: ${props => props.theme.high};
-`
-
-const Header = styled.p`
-color: ${props => props.theme.primary};
-font-size:2rem;
-font-weight:700;
-font-family: 'Raleway', sans-serif;
-letter-spacing: 1px;
-`
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
+  const homeRef = useRef()
+  const aboutRef = useRef()
+  const projectRef = useRef()
+  const contactRef = useRef()
+
+  const scrollTo = ref => ref.current.scrollIntoView({ behavior: 'smooth' })
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
+
+  const handleClick = (ref) => {
+    toggleOpen();
+    setTimeout(() => {
+      scrollTo(ref)
+    }, 700)
+  };
+
   return (
     <Main >
       <MenuToggle onClick={toggleOpen}>
@@ -165,39 +169,47 @@ function App() {
       <MenuItems>
         <MenuItem isOpen={isOpen}>
           <StyledHome />
-          <MenuLink>
+          <MenuLink onClick={() => handleClick(homeRef)}
+          >
             Home
           </MenuLink>
         </MenuItem>
         <MenuItem isOpen={isOpen}>
           <StyledTwitter />
-          <MenuLink>
+          <MenuLink onClick={() => handleClick(aboutRef)}>
             About
           </MenuLink >
         </MenuItem>
         <MenuItem isOpen={isOpen}>
           <StyledGithub />
-          <MenuLink>
+          <MenuLink onClick={() => handleClick(projectRef)}>
             Projects
               </MenuLink>
         </MenuItem>
         <MenuItem isOpen={isOpen}>
           <StyledContact />
-          <MenuLink>
+          <MenuLink onClick={() => handleClick(contactRef)}>
             Contact
             </MenuLink>
         </MenuItem>
       </MenuItems>
       <Content isOpen={isOpen}>
         <ContentInner>
-          <Home />
-          <About />
-          <About />
-          <Footer />
+          <div ref={homeRef}>
+            <Home />
+          </div>
+          <div ref={aboutRef}>
+            <About />
+          </div>
+          <div ref={projectRef}>
+            <Projects />
+          </div>
+          <div ref={contactRef}>
+            <Footer />
+          </div>
         </ContentInner>
       </Content>
     </Main>
   );
 }
-
 export default App;

@@ -1,9 +1,16 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
+import useToggle from '../hooks/useToggle'
+import Carousel from 'nuka-carousel';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 import twitter1 from '../images/twitter1.png'
 import battler1 from '../images/battler1.png'
 import bank1 from '../images/bank1.png'
 import gm1 from '../images/gm1.png'
+
 
 const Wrapper = styled.div`
 background-color:${props => props.theme.background};
@@ -50,10 +57,19 @@ height:14.4em;
 margin: 0.2em;
 `
 
-const ProjectImage = styled.img`
+const ProjectImage = styled.div`
+transition: .5s all;
 height:100%;
 width:100%;
+cursor:pointer;
 border-radius:5px;
+background-size:cover;
+transform-origin:left;
+filter: blur(1px) grayscale(80%);
+&:hover{
+    transform-origin: left;
+    filter:blur(0px);
+}
 `
 
 const InfoWrapper = styled.div`
@@ -101,18 +117,113 @@ justify-content:center;
 align-items:center;
 `
 
+const ModalImage = styled.div`
+background-size: 100% 100%;
+width:64em;
+height:32em;`
+
+const fade = keyframes`
+  from {
+    transform: scale(0.8);
+    opacity:0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity:1;
+  }
+`;
+
+const StyledContent = styled(DialogContent)`
+width:64em;
+height:32em;
+padding:0;
+border-radius:5px;
+animation: ${fade} .2s ease-in;
+`
+
+const StyledDialogOverlay = styled(DialogOverlay)`
+background:rgba(55, 55, 55, 0.6);
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+`
+const ControlsContainer = styled.div`
+margin-top:2em;
+display:flex;
+justify-content:center;
+`
+
+const ControlsText = styled.p`
+color:${props => props.theme.high};
+margin: 0 1em;
+font-size:0.8rem;
+`
+
+const ControlButton = styled.button`
+background:none;
+border:none;
+`
+
+
 const Projects = () => {
+
+    const [modalOne, toggleModalOne] = useToggle(false);
+    const [modalTwo, toggleModalTwo] = useToggle(false);
+    const [modalThree, toggleModalThree] = useToggle(false);
+    const [modalFour, toggleModalFour] = useToggle(false);
+
     return (
         <Wrapper>
+            <StyledDialogOverlay isOpen={modalOne} onDismiss={toggleModalOne}>
+                <StyledContent>
+                    <Carousel enableKeyboardControls={true}
+                        renderCenterLeftControls={({ previousSlide }) => (
+                            <ControlButton onClick={previousSlide}><IoIosArrowBack size={60} color={'#03DAC5'}/></ControlButton>
+                        )}
+                        renderCenterRightControls={({ nextSlide }) => (
+                            <ControlButton onClick={nextSlide}><IoIosArrowForward size={60} color={'#03DAC5'}/></ControlButton>
+                        )}
+                    >
+                        <ModalImage style={{ backgroundImage: `url(${twitter1})` }} />
+                        <ModalImage style={{ backgroundImage: `url(${battler1})` }} />
+                        <ModalImage style={{ backgroundImage: `url(${bank1})` }} />
+                        <ModalImage style={{ backgroundImage: `url(${gm1})` }} />
+                    </Carousel>
+                    <ControlsContainer>
+                        <ControlsText>A: Previous</ControlsText>
+                        <ControlsText>D: Next</ControlsText>
+                        <ControlsText>Q: First</ControlsText>
+                        <ControlsText>E: Last</ControlsText>
+                        <ControlsText>ESC: Exit</ControlsText>
+                    </ControlsContainer>
+                </StyledContent>
+            </StyledDialogOverlay>
+            <StyledDialogOverlay isOpen={modalTwo} onDismiss={toggleModalTwo}>
+                <StyledContent>
+                    <ModalImage style={{ backgroundImage: `url(${battler1})` }} />
+                </StyledContent>
+            </StyledDialogOverlay>
+            <StyledDialogOverlay isOpen={modalThree} onDismiss={toggleModalThree}>
+                <StyledContent>
+                    <ModalImage style={{ backgroundImage: `url(${bank1})` }} />
+                </StyledContent>
+            </StyledDialogOverlay>
+            <StyledDialogOverlay isOpen={modalFour} onDismiss={toggleModalFour}>
+                <StyledContent>
+                    <ModalImage style={{ backgroundImage: `url(${gm1})` }} />
+                </StyledContent>
+            </StyledDialogOverlay>
             <Header>Projects</Header>
             <SelectionWrapper>
                 <SelectionRow>
                     <SelectionCard>
                         <ImageContainer>
-                            <ProjectImage src={twitter1} />
+                            <ProjectImage onClick={toggleModalOne} style={{ backgroundImage: `url(${twitter1})` }} />
                         </ImageContainer >
                         <InfoWrapper>
-                            <ProjectTitle>Twitter Guessr</ProjectTitle>
+                            <ProjectTitle >Twitter Guessr</ProjectTitle>
                             <LinkWrapper>
                                 <ProjectLink>Visit Website</ProjectLink>
                                 <ProjectLink>View Source Code</ProjectLink>
@@ -121,7 +232,7 @@ const Projects = () => {
                     </SelectionCard>
                     <SelectionCard>
                         <ImageContainer>
-                            <ProjectImage src={battler1} />
+                            <ProjectImage onClick={toggleModalTwo} style={{ backgroundImage: `url(${battler1})` }} />
                         </ImageContainer >
                         <InfoWrapper>
                             <ProjectTitle>Github Battler</ProjectTitle>
@@ -130,12 +241,12 @@ const Projects = () => {
                                 <ProjectLink>View Source Code</ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
-                        </SelectionCard>
+                    </SelectionCard>
                 </SelectionRow>
                 <SelectionRow>
                     <SelectionCard>
                         <ImageContainer>
-                            <ProjectImage src={bank1} />
+                            <ProjectImage onClick={toggleModalThree} style={{ backgroundImage: `url(${bank1})` }} />
                         </ImageContainer >
                         <InfoWrapper>
                             <ProjectTitle>Bank Template</ProjectTitle>
@@ -144,10 +255,10 @@ const Projects = () => {
                                 <ProjectLink>View Source Code</ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
-                        </SelectionCard>
+                    </SelectionCard>
                     <SelectionCard>
                         <ImageContainer>
-                            <ProjectImage src={gm1} />
+                            <ProjectImage onClick={toggleModalFour} style={{ backgroundImage: `url(${gm1})` }} />
                         </ImageContainer >
                         <InfoWrapper>
                             <ProjectTitle>NHL Fantasy Stats</ProjectTitle>
@@ -156,7 +267,7 @@ const Projects = () => {
                                 <ProjectLink>View Source Code</ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
-                        </SelectionCard>
+                    </SelectionCard>
                 </SelectionRow>
             </SelectionWrapper>
         </Wrapper>);

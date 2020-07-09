@@ -170,28 +170,28 @@ const Footer = () => {
             <FooterSubheader>Want to get in touch?</FooterSubheader>
             {/* <ContactButton>  Contact Me</ContactButton> */}
             <SocialWrapper>
-                <SocialLink>
+                <SocialLink rel='noreferrer' target="_blank" href='https://www.linkedin.com/in/curtis-larsen-187727b4/'>
                     <SocialInner>
                         <SocialCenter>
                             <FaLinkedinIn />
                         </SocialCenter>
                     </SocialInner>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink rel='noreferrer' target="_blank" href='https://github.com/CDLar'>
                     <SocialInner>
                         <SocialCenter>
                             <FaGithub />
                         </SocialCenter>
                     </SocialInner>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink rel='noreferrer' target="_blank" href='https://twitter.com/Cdlarsen91'>
                     <SocialInner>
                         <SocialCenter>
                             <FaTwitter />
                         </SocialCenter>
                     </SocialInner>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink rel='noreferrer' target="_blank">
                     <SocialInner>
                         <SocialCenter>
                             <FaEnvelope />
