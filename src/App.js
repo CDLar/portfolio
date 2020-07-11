@@ -30,7 +30,7 @@ const StyledOpen = styled(FaBars)`
 position:absolute;
 top:50%;
 left:50%;
-font-size:1.2rem;
+font-size:1.3rem;
 margin-top: -15px;
 margin-left: -12px;
 transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
@@ -44,7 +44,7 @@ const StyledClose = styled(FaTimes)`
 position:absolute;
 top:50%;
 left:50%;
-font-size:1.2rem;
+font-size:1.3rem;
 margin-top: -15px;
 margin-left: -12px;
 transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);

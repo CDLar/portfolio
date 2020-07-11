@@ -72,11 +72,15 @@ justify-content:center;
 cursor:pointer;
 font-family: 'Raleway', sans-serif;
 text-transform:uppercase;
-background-color:${props => props.theme.elevated};
+background:none;
 border-radius:5px;
 border: 1px solid;
 border-color:${props => props.theme.high};
 color: ${props => props.theme.high};
+transition: all .2s;
+&:active{
+    background:${props => props.theme.primary};
+}
 `
 
 const SocialWrapper = styled.div`
@@ -129,6 +133,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 `
+
 const SocialInner = styled.div`
 height:100%;
 width:100%;
@@ -168,26 +173,26 @@ const Footer = () => {
         <Wrapper>
             <FooterHeader>Thanks!</FooterHeader>
             <FooterSubheader>Want to get in touch?</FooterSubheader>
-            {/* <ContactButton>  Contact Me</ContactButton> */}
+            <ContactButton>My Resume</ContactButton>
             <SocialWrapper>
                 <SocialLink rel='noreferrer' target="_blank" href='https://www.linkedin.com/in/curtis-larsen-187727b4/'>
                     <SocialInner>
                         <SocialCenter>
-                            <FaLinkedinIn />
+                            <FaLinkedinIn alt='Linkedin' />
                         </SocialCenter>
                     </SocialInner>
                 </SocialLink>
                 <SocialLink rel='noreferrer' target="_blank" href='https://github.com/CDLar'>
                     <SocialInner>
                         <SocialCenter>
-                            <FaGithub />
+                            <FaGithub alt='Github' />
                         </SocialCenter>
                     </SocialInner>
                 </SocialLink>
                 <SocialLink rel='noreferrer' target="_blank" href='https://twitter.com/Cdlarsen91'>
                     <SocialInner>
                         <SocialCenter>
-                            <FaTwitter />
+                            <FaTwitter alt='Twitter' />
                         </SocialCenter>
                     </SocialInner>
                 </SocialLink>
