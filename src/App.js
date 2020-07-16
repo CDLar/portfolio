@@ -155,6 +155,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false)
   const homeRef = useRef()
   const aboutRef = useRef()
+  const skillRef = useRef()
   const projectRef = useRef()
   const contactRef = useRef()
 
@@ -193,7 +194,7 @@ function App() {
         </MenuItem>
         <MenuItem isOpen={isOpen}>
           <StyledSkills />
-          <MenuLink onClick={() => handleClick(projectRef)}>
+          <MenuLink onClick={() => handleClick(skillRef)}>
             Skills
               </MenuLink>
         </MenuItem>
@@ -218,7 +219,9 @@ function App() {
           <div ref={aboutRef}>
             <About />
           </div>
+          <div ref={skillRef}>
           <Skills />
+          </div>
           <div ref={projectRef}>
             <Projects />
           </div>
