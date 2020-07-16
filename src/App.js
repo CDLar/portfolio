@@ -12,7 +12,7 @@ import Skills from './components/Skills'
 const Main = styled.div`
 background-color:${props => props.theme.elevated};
 overflow:hidden;
-`
+height:${props => props.isOpen && '100vh'};`
 
 const MenuToggle = styled.span`
 z-index: 999;
@@ -108,8 +108,10 @@ const Content = styled.main`
 transform-origin: top left;
 transition: transform 0.7s cubic-bezier(1,0.005,0.24,1);
 background-color:${props => props.theme.background};
+overflow:auto;
 ${ props => props.isOpen && css`
     transform: rotate(-30deg);
+    height:200vh;
   `}
 `
 
@@ -162,7 +164,7 @@ function App() {
   };
 
   return (
-    <Main >
+    <Main isOpen={isOpen}>
       <MenuToggle onClick={toggleOpen}>
         <StyledOpen color={'white'} isOpen={isOpen} />
         <StyledClose color={'white'} isOpen={isOpen} />
