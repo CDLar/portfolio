@@ -80,12 +80,12 @@ const InfoWrapper = styled.div`
 display:flex;
 flex-wrap:nowrap;
 justify-content:center;
-align-items:center;
+align-items:flex-start;
 margin-bottom:4em;
 `
 
 const TextPrimary = styled.h2`
-font-size:1.8rem;
+font-size:2rem;
 color: ${props => props.theme.high};
 font-style:italic;
 letter-spacing:1.5px;
@@ -102,13 +102,12 @@ const ColorText = styled.span`
 color:${props => props.theme.primaryV};
 `
 
-const About = ({ ref }) => {
+const About = () => {
     return (
-        <Wrapper ref={ref}>
+        <Wrapper >
             <Header>About</Header>
             <CardWrapper>
                 <Card>
-                    {console.log(ref)}
                     <IconContainer>
                         <FaReact size={70} />
                     </IconContainer>
@@ -174,7 +173,7 @@ I have serious passion for animations, UI effects, and creating dynamic, intuiti
                     <TextSecondary> Ever since deciding to code professionally <ColorText>ReactJS</ColorText> has been my main focus and everything else that I have studied has been with
                         the purpose of furthering my understanding of it.  </TextSecondary>
                     <TextSecondary>I have also studied <ColorText>JavaScript</ColorText> extensively to increase the functionality/effeciency of my code and <ColorText>CSS3</ColorText>,
-including libraries such as Styled Components, SASS, and CSS modules to create clean, modern designs. </TextSecondary>
+including all the latest styling options to create clean, modern designs. </TextSecondary>
                 </Fade>
             </InfoWrapper>
         </Wrapper>

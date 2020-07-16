@@ -5,6 +5,7 @@ import "@reach/dialog/styles.css";
 import useToggle from '../hooks/useToggle'
 import Carousel from 'nuka-carousel';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Fade from 'react-reveal/Fade';
 
 import twitter1 from '../images/twitter1.png'
 import battler1 from '../images/battler1.png'
@@ -147,7 +148,7 @@ const ModalOverlay = styled.div`
 `
 
 const OverlayText = styled.p`
-
+font-family:sans-serif;
 `
 
 const OverlayContainer = styled.div`
@@ -211,11 +212,13 @@ justify-content:center;
 const ControlsText = styled.p`
 color:${props => props.theme.high};
 margin: 0 1em;
-font-size:0.8rem;
+font-size:1.1rem;
+font-weight:700;
 `
 
 const ColorText = styled.span`
 color:${props => props.theme.primaryV};
+font-weight:500;
 `
 
 const ControlButton = styled.button`
@@ -227,7 +230,7 @@ font-size:1.3rem;
 color: ${props => props.theme.high};
 letter-spacing:1.5px;
 font-weight:300;
-margin-bottom:4rem;
+margin-bottom:2rem;
 `
 
 
@@ -279,8 +282,10 @@ const Projects = () => {
                     <ModalImage style={{ backgroundImage: `url(${gm1})` }} />
                 </StyledContent>
             </StyledDialogOverlay>
-            <Header>Projects</Header>            
-            <TextPrimary>Here are some of my recent <ColorText>projects</ColorText>. Hover a project card to view more <ColorText>images</ColorText>.</TextPrimary>
+            <Header>Projects</Header>
+            <Fade left>
+                <TextPrimary>Here are some of my recent <ColorText>projects</ColorText>. Hover a project card to view more <ColorText>details</ColorText>.</TextPrimary>
+            </Fade>
             <SelectionWrapper>
                 <SelectionRow>
                     <SelectionCard>

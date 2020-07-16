@@ -5,6 +5,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
 import Projects from './components/Projects'
+import Skills from './components/Skills'
 
 
 //SC Styles
@@ -201,6 +202,7 @@ function App() {
           <div ref={aboutRef}>
             <About />
           </div>
+          <Skills />
           <div ref={projectRef}>
             <Projects />
           </div>

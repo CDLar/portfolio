@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import './Home.css'
+import './Shapes.css'
 
 const Main = styled.div`
   width: 100%;
