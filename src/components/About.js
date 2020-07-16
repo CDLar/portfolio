@@ -63,7 +63,6 @@ height: 8em;
 bottom:0;
 z-index:-1;
 transform: scale(1.01);
-
 clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
 `
 

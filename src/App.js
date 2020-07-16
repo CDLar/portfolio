@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled, { css } from 'styled-components'
-import { FaBars, FaTimes, FaGithubAlt, FaMobileAlt, FaUser, FaHome } from 'react-icons/fa'
+import { FaBars, FaTimes, FaGithubAlt, FaMobileAlt, FaUser, FaHome, FaPencilRuler } from 'react-icons/fa'
 import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
@@ -60,12 +60,12 @@ left:1.5em;
 list-style:none;
 margin:0;
 padding:0;
+padding-bottom:0.5em;
 `
 
 const MenuItem = styled.li`
 display:flex;
 height: 7.95vh;
-margin-bottom:1em;
 transform:translateX(-300px);
 transition:transform 0.7s 0s cubic-bezier(1,0.005,0.24,1);
 ${ props => props.isOpen && css`
@@ -74,16 +74,20 @@ ${ props => props.isOpen && css`
   `}
 
 &:nth-child(2){
-  margin-left:2.5em;
+  margin-left:2em;
   transition-delay: ${props => props.isOpen ? '0.47s' : '0'}
 
 }
 &:nth-child(3){
-  margin-left:5em;
+  margin-left:4em;
   transition-delay: ${props => props.isOpen ? '0.48s' : '0'}
 }
 &:nth-child(4){
-  margin-left:7.5em;
+  margin-left:6em;
+  transition-delay: ${props => props.isOpen ? '0.49s' : '0'}
+}
+&:nth-child(5){
+  margin-left:8em;
   transition-delay: ${props => props.isOpen ? '0.49s' : '0'}
 }
 `
@@ -143,6 +147,10 @@ const StyledContact = styled(FaMobileAlt)`
 ${iconStyles}
 `
 
+const StyledSkills = styled(FaPencilRuler)`
+${iconStyles}
+`
+
 function App() {
   const [isOpen, setIsOpen] = useState(false)
   const homeRef = useRef()
@@ -182,6 +190,12 @@ function App() {
           <MenuLink onClick={() => handleClick(aboutRef)}>
             About
           </MenuLink >
+        </MenuItem>
+        <MenuItem isOpen={isOpen}>
+          <StyledSkills />
+          <MenuLink onClick={() => handleClick(projectRef)}>
+            Skills
+              </MenuLink>
         </MenuItem>
         <MenuItem isOpen={isOpen}>
           <StyledGithub />
