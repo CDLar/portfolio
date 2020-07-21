@@ -5,7 +5,9 @@ import "@reach/dialog/styles.css";
 import useToggle from '../hooks/useToggle'
 import Carousel from 'nuka-carousel';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaCode, FaExternalLinkAlt } from 'react-icons/fa'
 import Fade from 'react-reveal/Fade';
+import Tooltip from './Tooltip'
 
 import twitter1 from '../images/twitter1.png'
 import battler1 from '../images/battler1.png'
@@ -66,7 +68,6 @@ width:100%;
 cursor:pointer;
 border-radius:5px;
 background-size:cover;
-
 `
 
 const InfoWrapper = styled.div`
@@ -80,21 +81,27 @@ padding:0 1.5em;
 `
 
 const LinkWrapper = styled.div`
+display:flex;
 `
 
 const ProjectTitle = styled.h3`
-font-size:1rem;
+font-size:1.1rem;
 font-weight:500;
 `
 
 const ProjectLink = styled.a`
 font-size:0.75rem;
 font-weight:400;
+font-family:sans-serif;
+cursor:pointer;
 &:first-of-type{
     padding-right:0.75em;
 }
 &:nth-of-type(2){
     padding-left:0.75em;
+}
+&:hover{
+    color:${props => props.theme.primary};
 }
 `
 
@@ -123,7 +130,6 @@ const fade = keyframes`
     transform: scale(0.8);
     opacity:0;
   }
-
   to {
     transform: scale(1);
     opacity:1;
@@ -301,8 +307,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle >Twitter Guessr</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink>Visit website</ProjectLink>
-                                <ProjectLink>View source code</ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -319,8 +325,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Github Battler</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink>Visit Website</ProjectLink>
-                                <ProjectLink>View Source Code</ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -339,8 +345,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Bank Template</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink>Visit Website</ProjectLink>
-                                <ProjectLink>View Source Code</ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -357,8 +363,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>NHL Fantasy Stats</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink>Visit Website</ProjectLink>
-                                <ProjectLink>View Source Code</ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
