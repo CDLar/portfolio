@@ -8,7 +8,6 @@ const Main = styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
-  background-color:${props=>props.theme.background};
   border-color: ${props => props.theme.medium};
 `;
 
@@ -38,11 +37,17 @@ color:${props => props.theme.primary};
 const SubColorText = styled.span`
 color:${props => props.theme.primaryV};
 `
-
 const Home = () => {
     return (
+        <>
             <Main>
-            <ul class="circles">
+                <TextWrapper>
+                    <Header>Hello, I'm <ColorText>Curtis Larsen.</ColorText></Header>
+                    <SubHeader>I'm a <SubColorText>front-end</SubColorText> developer from <SubColorText>Ottawa.</SubColorText></SubHeader>
+                </TextWrapper>
+            </Main>
+            <div class="area" >
+                <ul class="circles">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -54,11 +59,9 @@ const Home = () => {
                     <li></li>
                     <li></li>
                 </ul>
-                <TextWrapper>
-                    <Header>Hello, I'm <ColorText>Curtis Larsen.</ColorText></Header>
-                    <SubHeader>I'm a <SubColorText>front-end</SubColorText> developer from <SubColorText>Ottawa.</SubColorText></SubHeader>
-                </TextWrapper>
-            </Main>
+            </div >
+        </>
+
     );
 }
 
