@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade';
 
-import nodeIcon from '../images/node.png'
-import gitIcon from '../images/git.png'
-import gitbashIcon from '../images/gitbash.ico'
-import reduxIcon from '../images/redux.png'
-import muiIcon from '../images/MUI.png'
-import skillTree from '../images/treealt.png'
+import skillTree from '../images/skilltree.png'
+import skillTreeCore from '../images/skilltreeCore.png'
+import skillTreeDev from '../images/skilltreeDev.png'
+import skillTreeDesign from '../images/skilltreeDesign.png'
+
 
 const Wrapper = styled.div`
 background-color:${props => props.theme.background};
@@ -63,11 +62,28 @@ flex:1;
 padding-left:8rem;
 max-width:35em;
 `
+const ColorText = styled.span`
+    color:${props => props.theme.primaryV};
+`
+const SkillText = styled.p`
+font-size:0.85rem;
+color:${props => props.theme.high};
+`
 
 const SkillWrapper = styled.div`
 justify-content:center;
 align-items:center;
 flex-direction:row;
+transition: all 0.3s;
+filter: grayscale(30%);
+color:${props => props.theme.high};
+&:hover{
+    transform:scale(1.2);
+    filter: grayscale(0%);
+}
+
+&:hover ${ColorText}{
+}
 `
 
 const SkillTitle = styled.h2`
@@ -77,32 +93,24 @@ font-style:italic;
 letter-spacing:1px;
 `
 
-const SkillText = styled.p`
-font-size:0.9rem;
-color:${props => props.theme.high};
-`
-
 const SkillTree = styled.img`
 height:30em;
 `
 
-const ColorText = styled.span`
-color:${props => props.theme.primaryV};
-`
-
 const Skills = () => {
+    const [activeTree, setActiveTree] = useState(skillTree)
     return (
         <Wrapper >
             <Header>Skills</Header>
             <ContentWrapper>
                 <PictureWrapper>
-                    <SkillTitle style={{ paddingRight:'2.7em' }}>
+                    <SkillTitle style={{ paddingRight: '2.7em' }}>
                         {'<SkillTree />'}
                     </SkillTitle>
-                    <SkillTree src={skillTree} alt='tree' />
+                    <SkillTree src={activeTree} alt='tree' />
                 </PictureWrapper>
                 <SkillsWrapper>
-                    <SkillWrapper>
+                    <SkillWrapper onMouseEnter={() => setActiveTree(skillTreeCore)} onMouseLeave={() => setActiveTree(skillTree)}>
                         <Fade top>
                             <SkillTitle>
                                 {'<Core />'}
@@ -110,11 +118,11 @@ const Skills = () => {
                         </Fade>
                         <Fade left>
                             <SkillText>
-                                My main area of expertice is front end development. I keep up with all the latest features of <ColorText>React</ColorText>, <ColorText>Javascript</ColorText>, <ColorText>CSS</ColorText>, and <ColorText>HTML</ColorText>. This includes, and is not limited to, React Hooks/Router, ES6, HTML5, and CSS3.
+                                My main area of expertice is front end development. I keep up with all the latest features of <ColorText>React</ColorText>, <ColorText>Javascript</ColorText>, <ColorText>CSS</ColorText>, <ColorText>HTML</ColorText>, and <ColorText>Redux</ColorText>. This includes, and is not limited to, React Hooks/Router, ES6, HTML5, CSS3, and complex state management.
                         </SkillText>
                         </Fade>
                     </SkillWrapper>
-                    <SkillWrapper>
+                    <SkillWrapper onMouseEnter={() => setActiveTree(skillTreeDev)} onMouseLeave={() => setActiveTree(skillTree)}>
                         <Fade top>
                             <SkillTitle>
                                 {'<Development />'}
@@ -126,7 +134,7 @@ const Skills = () => {
                         </SkillText>
                         </Fade>
                     </SkillWrapper>
-                    <SkillWrapper>
+                    <SkillWrapper onMouseEnter={() => setActiveTree(skillTreeDesign)} onMouseLeave={() => setActiveTree(skillTree)}>
                         <Fade top>
                             <SkillTitle>
                                 {'<Design />'}
