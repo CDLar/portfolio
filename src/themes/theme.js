@@ -8,6 +8,5 @@ export const theme = {
     elevated: '#1C2A35',
     elevated2: '#2a4051',
     high: 'rgba(255,255,255,0.87)',
-    medium: 'rgba(255, 255, 255, 0.60)',
-    low: 'rgba(255, 255, 255, 0.27)'
+    medium: 'rgba(255, 255, 255, 0.60)'
 }
