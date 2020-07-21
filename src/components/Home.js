@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components'
 import './Shapes.css'
 
-const Main = styled.div`
+const Hero = styled.div`
   width: 100%;
   height: calc(100vh + 10px);
   display:flex;
   justify-content:center;
   align-items:center;
-  border-color: ${props => props.theme.medium};
+  background-color:${props=>props.theme.background};
 `;
 
 const TextWrapper = styled.div`
@@ -37,17 +37,11 @@ color:${props => props.theme.primary};
 const SubColorText = styled.span`
 color:${props => props.theme.primaryV};
 `
+
 const Home = () => {
     return (
-        <>
-            <Main>
-                <TextWrapper>
-                    <Header>Hello, I'm <ColorText>Curtis Larsen.</ColorText></Header>
-                    <SubHeader>I'm a <SubColorText>front-end</SubColorText> developer from <SubColorText>Ottawa.</SubColorText></SubHeader>
-                </TextWrapper>
-            </Main>
-            <div class="area" >
-                <ul class="circles">
+            <Hero>
+            <ul class="circles">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -59,9 +53,11 @@ const Home = () => {
                     <li></li>
                     <li></li>
                 </ul>
-            </div >
-        </>
-
+                <TextWrapper>
+                    <Header>Hello, I'm <ColorText>Curtis Larsen.</ColorText></Header>
+                    <SubHeader>I'm a <SubColorText>front-end</SubColorText> developer from <SubColorText>Ottawa.</SubColorText></SubHeader>
+                </TextWrapper>
+            </Hero>
     );
 }
 
