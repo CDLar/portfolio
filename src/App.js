@@ -72,11 +72,9 @@ ${ props => props.isOpen && css`
     transform: translateX(0);
     transition: transform 0.35s 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   `}
-
 &:nth-child(2){
   margin-left:2em;
   transition-delay: ${props => props.isOpen ? '0.47s' : '0'}
-
 }
 &:nth-child(3){
   margin-left:4em;
@@ -101,7 +99,6 @@ letter-spacing: 2px;
 font-family: 'Raleway', sans-serif;
 color: ${props => props.theme.medium};
 transition: color 0.2s;
-
 &:hover{
 color: ${props => props.theme.high};
 cursor:pointer;
@@ -119,8 +116,9 @@ ${ props => props.isOpen && css`
   `}
 `
 
-const ContentInner = styled.div`
-
+const Filler = styled.div`
+height:50vh;
+background-color:${props => props.theme.elevated};
 `
 
 const iconStyles = `
@@ -212,7 +210,6 @@ function App() {
         </MenuItem>
       </MenuItems>
       <Content isOpen={isOpen}>
-        <ContentInner>
           <div ref={homeRef}>
             <Home />
           </div>
@@ -228,7 +225,7 @@ function App() {
           <div ref={contactRef}>
             <Footer />
           </div>
-        </ContentInner>
+          {isOpen && <Filler />}
       </Content>
     </Main>
   );
