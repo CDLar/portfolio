@@ -80,6 +80,7 @@ color:${props => props.theme.high};
 &:hover{
     transform:scale(1.2);
     filter: grayscale(0%);
+    cursor:pointer;
 }
 &:hover ${ColorText}{
 }
