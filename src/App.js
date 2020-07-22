@@ -159,19 +159,12 @@ function App() {
 
   const scrollTo = ref => ref.current.scrollIntoView({ behavior: 'smooth' })
 
-
   const toggleOpen = () => {
-    setIsOpen(true)
-    console.log(window.pageYOffset)
+    setIsOpen(!isOpen)
   }
-
-  const toggleClose = () => {
-    setIsOpen(false)
-  }
-
 
   const handleClick = (ref) => {
-    toggleClose();
+    toggleOpen();
     setTimeout(() => {
       scrollTo(ref)
     }, 700)
@@ -179,7 +172,7 @@ function App() {
 
   return (
     <Main isOpen={isOpen}>
-      <MenuToggle onClick={() => !isOpen ? toggleOpen() : toggleClose()}>
+      <MenuToggle onClick={toggleOpen}>
         <StyledOpen color={'white'} isOpen={isOpen} />
         <StyledClose color={'white'} isOpen={isOpen} />
       </MenuToggle>
@@ -216,23 +209,23 @@ function App() {
             </MenuLink>
         </MenuItem>
       </MenuItems>
-      <Content id='content' isOpen={isOpen}>
-        <div ref={homeRef}>
-          <Home />
-        </div>
-        <div ref={aboutRef}>
-          <About />
-        </div>
-        <div ref={skillRef}>
+      <Content isOpen={isOpen}>
+          <div ref={homeRef}>
+            <Home />
+          </div>
+          <div ref={aboutRef}>
+            <About />
+          </div>
+          <div ref={skillRef}>
           <Skills />
-        </div>
-        <div ref={projectRef}>
-          <Projects />
-        </div>
-        <div ref={contactRef}>
-          <Footer />
-        </div>
-        {isOpen && <Filler />}
+          </div>
+          <div ref={projectRef}>
+            <Projects />
+          </div>
+          <div ref={contactRef}>
+            <Footer />
+          </div>
+          {isOpen && <Filler />}
       </Content>
     </Main>
   );

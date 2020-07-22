@@ -1,9 +1,15 @@
+.area{
+    background: #121212; 
+    height:auto;
+    width:100%; 
+}
+
 .circles{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: inherit;
+    height: 100%;
     overflow: hidden;
 }
 
