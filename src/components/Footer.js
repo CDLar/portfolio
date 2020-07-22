@@ -168,44 +168,46 @@ transition:transform .5s;
 }
 `
 
-const Footer = () => {
+const Footer = ({ isOpen }) => {
     return (
-        <Wrapper>
-            <FooterHeader>Thanks!</FooterHeader>
-            <FooterSubheader>Want to get in touch?</FooterSubheader>
-            <ContactButton>My Resume</ContactButton>
-            <SocialWrapper>
-                <SocialLink rel='noreferrer' target="_blank" href='https://www.linkedin.com/in/curtis-larsen-187727b4/'>
-                    <SocialInner>
-                        <SocialCenter>
-                            <FaLinkedinIn alt='Linkedin' />
-                        </SocialCenter>
-                    </SocialInner>
-                </SocialLink>
-                <SocialLink rel='noreferrer' target="_blank" href='https://github.com/CDLar'>
-                    <SocialInner>
-                        <SocialCenter>
-                            <FaGithub alt='Github' />
-                        </SocialCenter>
-                    </SocialInner>
-                </SocialLink>
-                <SocialLink rel='noreferrer' target="_blank" href='https://twitter.com/Cdlarsen91'>
-                    <SocialInner>
-                        <SocialCenter>
-                            <FaTwitter alt='Twitter' />
-                        </SocialCenter>
-                    </SocialInner>
-                </SocialLink>
-                <SocialLink rel='noreferrer' target="_blank">
-                    <SocialInner>
-                        <SocialCenter>
-                            <FaEnvelope />
-                        </SocialCenter>
-                    </SocialInner>
-                </SocialLink>
-            </SocialWrapper>
-            <Footertext>Curtis Larsen ©2020</Footertext>
-        </Wrapper>
+        <>
+            <Wrapper>
+                <FooterHeader>Thanks!</FooterHeader>
+                <FooterSubheader>Want to get in touch?</FooterSubheader>
+                <ContactButton>My Resume</ContactButton>
+                <SocialWrapper>
+                    <SocialLink rel='noreferrer' target="_blank" href='https://www.linkedin.com/in/curtis-larsen-187727b4/'>
+                        <SocialInner>
+                            <SocialCenter>
+                                <FaLinkedinIn alt='Linkedin' />
+                            </SocialCenter>
+                        </SocialInner>
+                    </SocialLink>
+                    <SocialLink rel='noreferrer' target="_blank" href='https://github.com/CDLar'>
+                        <SocialInner>
+                            <SocialCenter>
+                                <FaGithub alt='Github' />
+                            </SocialCenter>
+                        </SocialInner>
+                    </SocialLink>
+                    <SocialLink rel='noreferrer' target="_blank" href='https://twitter.com/Cdlarsen91'>
+                        <SocialInner>
+                            <SocialCenter>
+                                <FaTwitter alt='Twitter' />
+                            </SocialCenter>
+                        </SocialInner>
+                    </SocialLink>
+                    <SocialLink rel='noreferrer' target="_blank">
+                        <SocialInner>
+                            <SocialCenter>
+                                <FaEnvelope />
+                            </SocialCenter>
+                        </SocialInner>
+                    </SocialLink>
+                </SocialWrapper>
+                <Footertext>Curtis Larsen ©2020</Footertext>
+            </Wrapper>
+        </>
     );
 }
 

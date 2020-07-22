@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled, { css } from 'styled-components'
 import { FaBars, FaTimes, FaGithubAlt, FaMobileAlt, FaUser, FaHome, FaPencilRuler } from 'react-icons/fa'
 import Home from './components/Home'
@@ -12,7 +12,12 @@ import Skills from './components/Skills'
 const Main = styled.div`
 background-color:${props => props.theme.elevated};
 overflow:hidden;
-height:${props => props.isOpen && '100vh'};`
+height:100vh
+${ props => props.delay && css`
+    height:auto;
+  `};
+
+`
 
 const MenuToggle = styled.span`
 z-index: 999;
@@ -110,14 +115,17 @@ transform-origin: top left;
 transition: transform 0.7s cubic-bezier(1,0.005,0.24,1);
 background-color:${props => props.theme.background};
 overflow:auto;
+height:200vh;
+${ props => props.delay && css`
+    height:auto;
+  `}
 ${ props => props.isOpen && css`
     transform: rotate(-30deg);
-    height:200vh;
   `}
 `
 
 const Filler = styled.div`
-height:50vh;
+height:100vh;
 background-color:${props => props.theme.elevated};
 `
 
@@ -151,24 +159,41 @@ ${iconStyles}
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
+  const [savedPos, setSavedPos] = useState(0)
+  const [delay, setDelay] = useState(true)
   const homeRef = useRef()
   const aboutRef = useRef()
   const skillRef = useRef()
   const projectRef = useRef()
   const contactRef = useRef()
+  const contentRef = useRef()
 
   const scrollTo = ref => ref.current.scrollIntoView({ behavior: 'smooth' })
+
+  useLayoutEffect(() => {
+    console.log(savedPos)
+    if (isOpen) {
+      contentRef.current.scrollTo(0, savedPos)
+    } else if (!isOpen) {
+      window.scroll(0, savedPos)
+    }
+  }, [isOpen,savedPos, delay])
+
 
 
   const toggleOpen = () => {
     setIsOpen(true)
-    console.log(window.pageYOffset)
+    setDelay(!delay)
+    setSavedPos(window.pageYOffset)
   }
 
   const toggleClose = () => {
     setIsOpen(false)
+    setTimeout(() =>{
+      setDelay(!delay)
+    }, 700)
+    setSavedPos(contentRef.current.scrollTop)
   }
-
 
   const handleClick = (ref) => {
     toggleClose();
@@ -178,7 +203,7 @@ function App() {
   };
 
   return (
-    <Main isOpen={isOpen}>
+    <Main delay= {delay} isOpen={isOpen}>
       <MenuToggle onClick={() => !isOpen ? toggleOpen() : toggleClose()}>
         <StyledOpen color={'white'} isOpen={isOpen} />
         <StyledClose color={'white'} isOpen={isOpen} />
@@ -216,7 +241,7 @@ function App() {
             </MenuLink>
         </MenuItem>
       </MenuItems>
-      <Content id='content' isOpen={isOpen}>
+      <Content delay= {delay} ref={contentRef} id='content' isOpen={isOpen}>
         <div ref={homeRef}>
           <Home />
         </div>
@@ -230,9 +255,9 @@ function App() {
           <Projects />
         </div>
         <div ref={contactRef}>
-          <Footer />
+          <Footer isOpen={isOpen}/>
         </div>
-        {isOpen && <Filler />}
+        {!delay && <Filler/>}
       </Content>
     </Main>
   );
