@@ -16,6 +16,9 @@ flex-direction:column;
 align-items:center;
 padding:0 10%;
 margin-bottom:6rem;
+@media (max-width: 1200px) {
+    padding: 0 5%;
+}
 `
 
 const Header = styled.h1`
@@ -41,6 +44,9 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 width:100%;
+@media (max-width: 790px) {
+    flex-direction:column;
+}
 `
 
 const PictureWrapper = styled.div`
@@ -49,8 +55,17 @@ flex-direction:column;
 justify-content:space-between;
 align-items:flex-end;
 flex:1;
+width:100%;
 padding-right:8rem;
-max-width:35em;
+@media (max-width: 1080px) {
+    padding-right:1rem;
+}
+@media (max-width: 790px) {
+margin-bottom:3em;
+padding-right:0rem;
+align-items:center;
+justify-content:center;
+}
 `
 
 const SkillsWrapper = styled.div`
@@ -61,6 +76,18 @@ justify-content:space-between;
 flex:1;
 padding-left:8rem;
 max-width:35em;
+@media (max-width: 1080px) {
+    padding-left:7rem;
+}
+@media (max-width: 900px) {
+    padding-left:4rem;
+}
+@media (max-width: 850px) {
+    padding-left:1rem;
+}
+@media (max-width: 790px) {
+    padding-left:0rem;
+}
 `
 const ColorText = styled.span`
     color:${props => props.theme.primaryV};
@@ -84,6 +111,11 @@ color:${props => props.theme.high};
 }
 &:hover ${ColorText}{
 }
+@media (max-width: 790px) {
+    pointer-events:none;
+    margin-bottom:3em;
+    filter: grayscale(0%);
+}
 `
 
 const SkillTitle = styled.h2`
@@ -91,6 +123,16 @@ font-size:2rem;
 margin-bottom:0.75em;
 font-style:italic;
 letter-spacing:1px;
+@media (max-width: 790px) {
+    text-align:center;
+}
+`
+
+const TreeTitle = styled(SkillTitle)`
+padding-right: 2.7em;
+@media (max-width: 790px) {
+    padding-right:0rem;
+}
 `
 
 const SkillTree = styled.img`
@@ -104,9 +146,9 @@ const Skills = () => {
             <Header>Skills</Header>
             <ContentWrapper>
                 <PictureWrapper>
-                    <SkillTitle style={{ paddingRight: '2.7em' }}>
+                    <TreeTitle>
                         {'<SkillTree />'}
-                    </SkillTitle>
+                    </TreeTitle>
                     <SkillTree src={activeTree} alt='tree' />
                 </PictureWrapper>
                 <SkillsWrapper>
