@@ -10,6 +10,9 @@ display:flex;
 flex-direction:column;
 align-items:center;
 padding:0 15%;
+@media (max-width: 980px) {
+padding:0 10%;
+  }
 `
 
 const CardWrapper = styled.div`
@@ -18,6 +21,11 @@ display:flex;
 justify-content:center;
 align-items:center;
 margin: 4em 0;
+flex-wrap:nowrap;
+@media (max-width: 980px) {
+flex-wrap:wrap;
+  }
+
 `
 
 const Header = styled.h1`
@@ -81,13 +89,25 @@ flex-wrap:nowrap;
 justify-content:center;
 align-items:flex-start;
 margin-bottom:4em;
+@media (max-width: 656px) {
+      flex-direction:column;
+      }
 `
 
 const TextPrimary = styled.h2`
 font-size:2rem;
+text-align: center;
 color: ${props => props.theme.high};
 font-style:italic;
 letter-spacing:1.5px;
+@media (max-width: 1240px) {
+font-size: 1.5rem;
+letter-spacing:1px;
+  }
+  @media (max-width: 815px) {
+font-size: 1.1rem;
+letter-spacing:0.7px;
+  }
 `
 
 const TextSecondary = styled.p`
