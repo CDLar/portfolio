@@ -15,6 +15,7 @@ clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
 `
 
 const FooterHeader = styled.h3`
+transition: all .2s;
 color: ${props => props.theme.high};
 font-size:2.5rem;
 display:flex;
@@ -25,6 +26,9 @@ letter-spacing: 2px;
 justify-content:center;
 align-items:center;
 margin:1em 1em 0 1em;
+@media (max-width: 700px) {
+    font-size:2rem;
+    }
 &:before{
     left:0;
     margin-left:10%;
@@ -33,6 +37,24 @@ margin:1em 1em 0 1em;
     width:40vh;
     max-width:25em;
     border-bottom:5px solid white;
+    @media (max-width: 1125px) {
+    width:30vh;
+    }
+    @media (max-width: 1000px) {
+    width:20vh;
+    }
+    @media (max-width: 700px) {
+    width:15vh;
+    }
+    @media (max-width: 575px) {
+    width:10vh;
+    }
+    @media (max-width: 400px) {
+    width:5vh;
+    }
+    @media (max-width: 300px) {
+    width:0vh;
+    }
 }
 &:after{
     right:0;
@@ -42,6 +64,24 @@ margin:1em 1em 0 1em;
     width:40vh;
     max-width:25em;
     border-bottom:5px solid white;
+    @media (max-width: 1125px) {
+    width:30vh;
+    }
+    @media (max-width: 1000px) {
+    width:20vh;
+    }
+    @media (max-width: 700px) {
+    width:15vh;
+    }
+    @media (max-width: 575px) {
+    width:10vh;
+    }
+    @media (max-width: 400px) {
+    width:5vh;
+    }
+    @media (max-width: 300px) {
+    width:0vh;
+    }
 }
 `
 
@@ -51,6 +91,9 @@ font-size:1rem;
 font-family: 'Raleway', sans-serif;
 letter-spacing: 2px;
 margin:1em;
+@media (max-width: 700px) {
+    font-size:0.8rem;
+    }
 `
 
 const Footertext = styled.p`
@@ -81,6 +124,12 @@ transition: all .2s;
 &:active{
     background:${props => props.theme.primary};
 }
+
+@media (max-width: 700px) {
+width:12em;
+height:2.8em;
+font-size:1.1rem;
+    }
 `
 
 const SocialWrapper = styled.div`
