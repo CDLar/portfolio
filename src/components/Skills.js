@@ -75,7 +75,6 @@ flex-direction:column;
 justify-content:space-between;
 flex:1;
 padding-left:8rem;
-max-width:35em;
 @media (max-width: 1080px) {
     padding-left:7rem;
 }
@@ -115,6 +114,14 @@ color:${props => props.theme.high};
     pointer-events:none;
     margin-bottom:3em;
     filter: grayscale(0%);
+    padding:0 3em;
+    text-align:center;
+}
+@media (max-width: 700px) {
+    padding:0 2em;
+}
+@media (max-width: 525px) {
+    padding:0 1em;
 }
 `
 

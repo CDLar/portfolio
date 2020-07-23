@@ -118,6 +118,9 @@ flex-flow: row nowrap;
 width:100%;
 justify-content:center;
 align-items:center;
+@media (max-width: 1005px) {
+flex-direction:column;
+}
 `
 
 const ModalImage = styled.div`
@@ -237,6 +240,17 @@ color: ${props => props.theme.high};
 letter-spacing:1.5px;
 font-weight:300;
 margin-bottom:2rem;
+display:block;
+&:first-of-type{
+    margin-bottom:0rem;
+}
+`
+
+const TextWrapper = styled.div`
+display:flex;
+@media (max-width: 1005px) {
+display:block;
+}
 `
 
 
@@ -290,7 +304,10 @@ const Projects = () => {
             </StyledDialogOverlay>
             <Header>Projects</Header>
             <Fade left>
-                <TextPrimary>Here are some of my recent <ColorText>projects</ColorText>. Hover a project card to view more <ColorText>details</ColorText>.</TextPrimary>
+                <TextWrapper>
+                    <TextPrimary>Here are some of my recent <ColorText>projects</ColorText>.&nbsp;</TextPrimary>
+                    <TextPrimary>Hover a project card to view more <ColorText>details</ColorText>.</TextPrimary>
+                </TextWrapper>
             </Fade>
             <SelectionWrapper>
                 <SelectionRow>
@@ -307,7 +324,7 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle >Twitter Guessr</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
                                 <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
@@ -325,7 +342,7 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Github Battler</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
                                 <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
@@ -345,7 +362,7 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Bank Template</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
                                 <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
@@ -363,7 +380,7 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>NHL Fantasy Stats</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{marginTop:'-0.15em'}}size={25} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
                                 <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
