@@ -191,7 +191,7 @@ I have serious passion for animations, UI effects, and creating dynamic, intuiti
 </TextSecondary>
                     <TextSecondary> Ever since deciding to code professionally <ColorText>ReactJS</ColorText> has been my main focus and everything else that I have studied has been with
                         the purpose of furthering my understanding of it.  </TextSecondary>
-                    <TextSecondary>I have also studied <ColorText>JavaScript</ColorText> extensively to increase the functionality/effeciency of my code and <ColorText>CSS3</ColorText>,
+                    <TextSecondary>I have also studied <ColorText>JavaScript</ColorText> extensively to increase the functionality/efficiency of my code and <ColorText>CSS3</ColorText>,
 including all the latest styling options to create clean, modern designs. </TextSecondary>
                 </Fade>
             </InfoWrapper>

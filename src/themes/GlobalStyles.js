@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 
@@ -16,6 +16,7 @@ html, body, #root{
     &:focus {
     outline: 0;
 }
+&:visited { text-decoration: none; color:rgba(255,255,255,0.87); }
 }
 
 a {

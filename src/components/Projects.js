@@ -240,6 +240,7 @@ font-size:0.9rem;
 
 const ModalImage = styled.div`
 background-size: 100% 100%;
+cursor:default;
 width:64em;
 height:32em;
 @media(max-width: 1075px){
@@ -379,23 +380,47 @@ font-size:1.55rem;
 `
 
 
-const Projects = () => {
+const arrowStyles = `
+font-size:60px;
+color:#03DAC5;
+&:hover{
+    cursor:pointer;
+}
+@media(max-width: 690px){
+    font-size:50px;
+}
+@media(max-width: 530px){
+    font-size:40px;
+}
+@media(max-width: 375px){
+    font-size:30px;
+}
+`
 
+const StyledBackArrow = styled(IoIosArrowBack)`
+${arrowStyles}
+`
+
+const StyledForwardArrow = styled(IoIosArrowForward)`
+${arrowStyles}
+`
+
+
+const Projects = () => {
     const [modalOne, toggleModalOne] = useToggle(false);
     const [modalTwo, toggleModalTwo] = useToggle(false);
     const [modalThree, toggleModalThree] = useToggle(false);
     const [modalFour, toggleModalFour] = useToggle(false);
-
     return (
         <Wrapper>
             <StyledDialogOverlay isOpen={modalOne} onDismiss={toggleModalOne}>
                 <StyledContent>
                     <Carousel enableKeyboardControls={true}
                         renderCenterLeftControls={({ previousSlide }) => (
-                            <ControlButton onClick={previousSlide}><IoIosArrowBack size={60} color={'#03DAC5'} /></ControlButton>
+                            <ControlButton onClick={previousSlide}><StyledBackArrow /></ControlButton>
                         )}
                         renderCenterRightControls={({ nextSlide }) => (
-                            <ControlButton onClick={nextSlide}><IoIosArrowForward size={60} color={'#03DAC5'} /></ControlButton>
+                            <ControlButton onClick={nextSlide}><StyledForwardArrow /></ControlButton>
                         )}
                     >
                         <ModalImage style={{ backgroundImage: `url(${twitter1})` }} />
@@ -449,8 +474,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle >Twitter Guessr</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://github.com/CDLar/twitter-guessr/' target='_blank'><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://twitter-guessr.netlify.app/' target='_blank'><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -467,8 +492,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Github Battler</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://github.com/CDLar/Battleproject' target='_blank'><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://githubbattler.netlify.app/' target='_blank'><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -479,7 +504,7 @@ const Projects = () => {
                             <ProjectImage onClick={toggleModalThree} style={{ backgroundImage: `url(${bank1})` }} />
                             <ModalOverlay>
                                 <OverlayContainer>
-                                    <OverlayText>Bank design template with language/login contexts. Contains a dashboard for user information and can request current exchange rates for different currencies.</OverlayText>
+                                    <OverlayText>Bank design template with language/login contexts utilizing the MUI framework. Contains a user dashboard and can request current exchange rates for different currencies.</OverlayText>
                                     <OverlayButton onClick={toggleModalOne} >See More</OverlayButton>
                                 </OverlayContainer>
                             </ModalOverlay>
@@ -487,8 +512,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Bank Template</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://github.com/CDLar/bank-demo' target='_blank'><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://demo-bank.netlify.app/' target='_blank'><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -505,8 +530,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Fantasy Sports App</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://github.com/CDLar/gm-profiles' target='_blank'><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink href='https://gm-stats.netlify.app/' target='_blank'><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
