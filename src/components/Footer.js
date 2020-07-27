@@ -246,7 +246,7 @@ const Footer = ({ isOpen }) => {
                             </SocialCenter>
                         </SocialInner>
                     </SocialLink>
-                    <SocialLink href='mailto:curtis.larssen@gmail.com' rel='noreferrer' target="_blank">
+                    <SocialLink href='mailto:curtis@gmail.com' rel='noreferrer'>
                         <SocialInner>
                             <SocialCenter>
                                 <FaEnvelope />
