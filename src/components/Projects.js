@@ -52,12 +52,25 @@ font-family:'raleway';
 margin:1.5rem;
 display:block;
 border-radius:5px;
+@media (max-width: 475px){
+    width:22em;
+    min-width:22em;
+    height: 14em;
+    margin: 1em;
+}
+@media (max-width: 375px){
+    width:17em;
+    min-width:17em;
+    height: 11em;
+    margin: 1em;
+    margin:0.5em;
+}
 `
 
 const ImageContainer = styled.div`
 position:relative;
 background-color: #2a4051;
-height:14.4em;
+height:84.706%;
 margin: 0.2em;
 border-radius:5px;
 `
@@ -78,6 +91,12 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:0 1.5em;
+@media (max-width: 475px){
+    margin-top:-0.4em;
+}
+@media (max-width: 375px){
+    margin-top:-0.65rem;
+}
 `
 
 const LinkWrapper = styled.div`
@@ -87,6 +106,12 @@ display:flex;
 const ProjectTitle = styled.h3`
 font-size:1.1rem;
 font-weight:500;
+@media (max-width: 475px){
+    font-size:0.9rem;
+}
+@media (max-width: 375px){
+    font-size:0.7rem;
+}
 `
 
 const ProjectLink = styled.a`
@@ -123,11 +148,6 @@ flex-direction:column;
 }
 `
 
-const ModalImage = styled.div`
-background-size: 100% 100%;
-width:64em;
-height:32em;`
-
 const fade = keyframes`
   from {
     transform: scale(0.8);
@@ -158,6 +178,13 @@ const ModalOverlay = styled.div`
 
 const OverlayText = styled.p`
 font-family:sans-serif;
+font-size:1rem;
+@media (max-width: 475px){
+    font-size:0.9rem;
+}
+@media (max-width: 375px){
+    font-size:0.7rem;
+}
 `
 
 const OverlayContainer = styled.div`
@@ -176,6 +203,12 @@ text-align:center;
         -webkit-transform: scale(1);
 	transform: scale(1);
     }
+    @media (max-width: 475px){
+    padding: 0 2em;
+    }
+    @media (max-width: 375px){
+    padding: 0 1rem;
+}
 `
 
 const OverlayButton = styled.button`
@@ -186,7 +219,7 @@ const OverlayButton = styled.button`
     margin: 25px;
     padding: 10px 35px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     color: #fff;
     cursor: pointer;
     border-radius: 50px;
@@ -195,6 +228,40 @@ const OverlayButton = styled.button`
     &:hover{
         background: ${props => props.theme.primary};
     }
+    @media (max-width: 475px){
+font-size:0.9rem;
+}
+@media (max-width: 375px){
+    font-size:0.7rem;
+    padding: 5px 20px;
+}
+`
+
+
+const ModalImage = styled.div`
+background-size: 100% 100%;
+width:64em;
+height:32em;
+@media(max-width: 1075px){
+    width:50em;
+    height:25em;
+}
+@media(max-width: 850px){
+    width:40em;
+    height:20em;
+}
+@media(max-width: 690px){
+    width:30em;
+    height:15em;
+}
+@media(max-width: 530px){
+    width:20em;
+    height:10em;
+}
+@media(max-width: 375px){
+    width:15em;
+    height:7.5em;
+}
 `
 
 const StyledContent = styled(DialogContent)`
@@ -203,6 +270,26 @@ height:32em;
 padding:0;
 border-radius:5px;
 animation: ${fade} .2s ease-in;
+@media(max-width: 1075px){
+    width:50em;
+    height:25em;
+}
+@media(max-width: 850px){
+    width:40em;
+    height:20em;
+}
+@media(max-width: 690px){
+    width:30em;
+    height:15em;
+}
+@media(max-width: 530px){
+    width:20em;
+    height:10em;
+}
+@media(max-width: 375px){
+    width:15em;
+    height:7.5em;
+}
 `
 
 const StyledDialogOverlay = styled(DialogOverlay)`
@@ -223,6 +310,18 @@ color:${props => props.theme.high};
 margin: 0 1em;
 font-size:1.1rem;
 font-weight:700;
+@media(max-width: 850px){
+    font-size:1rem;
+}
+@media(max-width: 690px){
+    font-size:0.9rem;
+}
+@media(max-width: 530px){
+    font-size:0.8rem;
+}
+@media(max-width: 375px){
+    font-size:0.7rem;
+}
 `
 
 const ColorText = styled.span`
@@ -242,7 +341,16 @@ font-weight:300;
 margin-bottom:2rem;
 display:block;
 &:first-of-type{
-    margin-bottom:0rem;
+    margin-bottom:0.2rem;
+}
+@media (max-width: 540px) {
+font-size:1rem;
+}
+@media (max-width: 440px) {
+font-size:0.8rem;
+}
+@media (max-width: 365px) {
+font-size:0.7rem;
 }
 `
 
@@ -250,6 +358,23 @@ const TextWrapper = styled.div`
 display:flex;
 @media (max-width: 1005px) {
 display:block;
+}
+`
+
+const StyledExternal = styled(FaExternalLinkAlt)`
+font-size:1.2rem;
+margin-top:0.1em;
+@media (max-width: 475px) {
+    font-size:0.8rem;
+    margin-top:0.15em;
+}
+`
+
+const StyledCode = styled(FaCode)`
+font-size:1.55rem;
+@media (max-width: 475px) {
+    font-size:1rem;
+    margin-top:0.05em;
 }
 `
 
@@ -324,8 +449,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle >Twitter Guessr</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -342,8 +467,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Github Battler</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -362,8 +487,8 @@ const Projects = () => {
                         <InfoWrapper>
                             <ProjectTitle>Bank Template</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>
@@ -378,10 +503,10 @@ const Projects = () => {
                             </ModalOverlay>
                         </ImageContainer >
                         <InfoWrapper>
-                            <ProjectTitle>NHL Fantasy Stats</ProjectTitle>
+                            <ProjectTitle>Fantasy Sports App</ProjectTitle>
                             <LinkWrapper>
-                                <ProjectLink><Tooltip text='View Source Code'><FaCode style={{ marginTop: '-0.15em' }} size={25} /></Tooltip></ProjectLink>
-                                <ProjectLink><Tooltip text='Visit Website'><FaExternalLinkAlt size={20} /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='View Source Code'><StyledCode /></Tooltip></ProjectLink>
+                                <ProjectLink><Tooltip text='Visit Website'><StyledExternal /></Tooltip></ProjectLink>
                             </LinkWrapper>
                         </InfoWrapper>
                     </SelectionCard>

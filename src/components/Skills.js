@@ -70,7 +70,7 @@ justify-content:center;
 
 const SkillsWrapper = styled.div`
 display:flex;
-align-items:center;
+align-items:flex-start;
 flex-direction:column;
 justify-content:space-between;
 flex:1;
@@ -101,6 +101,7 @@ justify-content:center;
 align-items:center;
 flex-direction:row;
 transition: all 0.3s;
+max-width:27rem;
 filter: grayscale(30%);
 color:${props => props.theme.high};
 &:hover{
@@ -116,6 +117,7 @@ color:${props => props.theme.high};
     filter: grayscale(0%);
     padding:0 3em;
     text-align:center;
+    max-width:none;
 }
 @media (max-width: 700px) {
     padding:0 2em;
@@ -144,6 +146,10 @@ padding-right: 2.7em;
 
 const SkillTree = styled.img`
 height:30em;
+@media (max-width: 400px){
+    width:17em;
+    height:auto;
+}
 `
 
 const Skills = () => {

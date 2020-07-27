@@ -13,6 +13,9 @@ html, body, #root{
     padding: 0 ;
     margin: 0;
     box-sizing: border-box;
+    &:focus {
+    outline: 0;
+}
 }
 
 a {
