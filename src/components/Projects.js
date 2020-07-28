@@ -9,11 +9,28 @@ import { FaCode, FaExternalLinkAlt } from 'react-icons/fa'
 import Fade from 'react-reveal/Fade';
 import Tooltip from './Tooltip'
 
-import twitter1 from '../images/twitter1.png'
-import battler1 from '../images/battler1.png'
-import bank1 from '../images/bank1.png'
-import gm1 from '../images/gm1.png'
+import twitt1 from '../images/twitt-1.png'
+import twitt2 from '../images/twitt-2.png'
+import twitt3 from '../images/twitt-3.png'
+import twitt4 from '../images/twitt-4.png'
+import twitt5 from '../images/twitt-5.png'
 
+import battler1 from '../images/battler1.png'
+import battler2 from '../images/battler2.png'
+import battler3 from '../images/battler3.png'
+import battler4 from '../images/battler4.png'
+import battler5 from '../images/battler5.png'
+
+import bank1 from '../images/bank-1.png'
+import bank2 from '../images/bank-2.png'
+import bank3 from '../images/bank-3.png'
+import bank4 from '../images/bank-4.png'
+import bank5 from '../images/bank-5.png'
+
+import gm1 from '../images/gm-1.jpg'
+import gm2 from '../images/gm-2.jpg'
+import gm3 from '../images/gm-3.jpg'
+import gm4 from '../images/gm-4.png'
 
 const Wrapper = styled.div`
 background-color:${props => props.theme.background};
@@ -423,10 +440,11 @@ const Projects = () => {
                             <ControlButton onClick={nextSlide}><StyledForwardArrow /></ControlButton>
                         )}
                     >
-                        <ModalImage style={{ backgroundImage: `url(${twitter1})` }} />
-                        <ModalImage style={{ backgroundImage: `url(${battler1})` }} />
-                        <ModalImage style={{ backgroundImage: `url(${bank1})` }} />
-                        <ModalImage style={{ backgroundImage: `url(${gm1})` }} />
+                        <ModalImage title='Home screen ft. light/dark modes'style={{ backgroundImage: `url(${twitt1})` }} />
+                        <ModalImage title='Two different quiz choices' style={{ backgroundImage: `url(${twitt2})` }} />
+                        <ModalImage title='A tweet is displayed with the ID'style={{ backgroundImage: `url(${twitt3})` }} />
+                        <ModalImage title='Making a selection will reveal the answer'style={{ backgroundImage: `url(${twitt4})` }} />
+                        <ModalImage title='Your score is displayed at the end of a quiz'style={{ backgroundImage: `url(${twitt5})` }} />
                     </Carousel>
                     <ControlsContainer>
                         <ControlsText>A: <ColorText>Previous</ColorText></ControlsText>
@@ -439,17 +457,76 @@ const Projects = () => {
             </StyledDialogOverlay>
             <StyledDialogOverlay isOpen={modalTwo} onDismiss={toggleModalTwo}>
                 <StyledContent>
-                    <ModalImage style={{ backgroundImage: `url(${battler1})` }} />
+                    <Carousel enableKeyboardControls={true}
+                        renderCenterLeftControls={({ previousSlide }) => (
+                            <ControlButton onClick={previousSlide}><StyledBackArrow /></ControlButton>
+                        )}
+                        renderCenterRightControls={({ nextSlide }) => (
+                            <ControlButton onClick={nextSlide}><StyledForwardArrow /></ControlButton>
+                        )}
+                    >
+                        <ModalImage title='Battle feature, two github usernames are entered' style={{ backgroundImage: `url(${battler1})` }} />
+                        <ModalImage title='A prompt to confirm the choices' style={{ backgroundImage: `url(${battler2})` }} />
+                        <ModalImage title='Results + information is displayed for each user' style={{ backgroundImage: `url(${battler3})` }} />
+                        <ModalImage title='Fetching github repository data from an API' style={{ backgroundImage: `url(${battler4})` }} />
+                        <ModalImage title='Displaying the most popular repositories for the selected language' style={{ backgroundImage: `url(${battler5})` }} />
+                    </Carousel>
+                    <ControlsContainer>
+                        <ControlsText>A: <ColorText>Previous</ColorText></ControlsText>
+                        <ControlsText>D: <ColorText>Next</ColorText></ControlsText>
+                        <ControlsText>Q: <ColorText>First</ColorText></ControlsText>
+                        <ControlsText>E: <ColorText>Last</ColorText></ControlsText>
+                        <ControlsText>ESC: <ColorText>Exit</ColorText></ControlsText>
+                    </ControlsContainer>
                 </StyledContent>
             </StyledDialogOverlay>
             <StyledDialogOverlay isOpen={modalThree} onDismiss={toggleModalThree}>
                 <StyledContent>
-                    <ModalImage style={{ backgroundImage: `url(${bank1})` }} />
+                    <Carousel enableKeyboardControls={true}
+                        renderCenterLeftControls={({ previousSlide }) => (
+                            <ControlButton onClick={previousSlide}><StyledBackArrow /></ControlButton>
+                        )}
+                        renderCenterRightControls={({ nextSlide }) => (
+                            <ControlButton onClick={nextSlide}><StyledForwardArrow /></ControlButton>
+                        )}
+                    >
+                        <ModalImage title='Sample landing page' style={{ backgroundImage: `url(${bank1})` }} />
+                        <ModalImage title='Dynamic language support' style={{ backgroundImage: `url(${bank2})` }} />
+                        <ModalImage title='Real-time fetching of exchange rates' style={{ backgroundImage: `url(${bank3})` }} />
+                        <ModalImage title='Auth contexts used to validate login details' style={{ backgroundImage: `url(${bank4})` }} />
+                        <ModalImage title='Sample dashboard for a user once logged in' style={{ backgroundImage: `url(${bank5})` }} />
+                    </Carousel>
+                    <ControlsContainer>
+                        <ControlsText>A: <ColorText>Previous</ColorText></ControlsText>
+                        <ControlsText>D: <ColorText>Next</ColorText></ControlsText>
+                        <ControlsText>Q: <ColorText>First</ColorText></ControlsText>
+                        <ControlsText>E: <ColorText>Last</ColorText></ControlsText>
+                        <ControlsText>ESC: <ColorText>Exit</ColorText></ControlsText>
+                    </ControlsContainer>
                 </StyledContent>
             </StyledDialogOverlay>
             <StyledDialogOverlay isOpen={modalFour} onDismiss={toggleModalFour}>
                 <StyledContent>
-                    <ModalImage style={{ backgroundImage: `url(${gm1})` }} />
+                    <Carousel enableKeyboardControls={true}
+                        renderCenterLeftControls={({ previousSlide }) => (
+                            <ControlButton onClick={previousSlide}><StyledBackArrow /></ControlButton>
+                        )}
+                        renderCenterRightControls={({ nextSlide }) => (
+                            <ControlButton onClick={nextSlide}><StyledForwardArrow /></ControlButton>
+                        )}
+                    >
+                        <ModalImage title='Scores assigned to teams based on historic playoff data' style={{ backgroundImage: `url(${gm1})` }} />
+                        <ModalImage title='Cards can be flipped to reveal overall league stats' style={{ backgroundImage: `url(${gm2})` }} />
+                        <ModalImage title='Different themes for each NHL team' style={{ backgroundImage: `url(${gm3})` }} />
+                        <ModalImage title='Team list with stats for each GM with additional season stats' style={{ backgroundImage: `url(${gm4})` }} />
+                    </Carousel>
+                    <ControlsContainer>
+                        <ControlsText>A: <ColorText>Previous</ColorText></ControlsText>
+                        <ControlsText>D: <ColorText>Next</ColorText></ControlsText>
+                        <ControlsText>Q: <ColorText>First</ColorText></ControlsText>
+                        <ControlsText>E: <ColorText>Last</ColorText></ControlsText>
+                        <ControlsText>ESC: <ColorText>Exit</ColorText></ControlsText>
+                    </ControlsContainer>
                 </StyledContent>
             </StyledDialogOverlay>
             <Header>Projects</Header>
@@ -463,7 +540,7 @@ const Projects = () => {
                 <SelectionRow>
                     <SelectionCard>
                         <ImageContainer>
-                            <ProjectImage style={{ backgroundImage: `url(${twitter1})` }} />
+                            <ProjectImage style={{ backgroundImage: `url(${twitt1})` }} />
                             <ModalOverlay>
                                 <OverlayContainer>
                                     <OverlayText>Multiple-choice quiz App based on real Tweets. Uses official Twitter API and widgets to load in Tweet data to display. Fully responsive with light/dark mode.</OverlayText >
@@ -485,7 +562,7 @@ const Projects = () => {
                             <ModalOverlay>
                                 <OverlayContainer>
                                     <OverlayText>App with two main functionalities, can display most popular Github repos based on programming language, or choose two Github profiles to battle.</OverlayText>
-                                    <OverlayButton onClick={toggleModalOne} >See More</OverlayButton>
+                                    <OverlayButton onClick={toggleModalTwo} >See More</OverlayButton>
                                 </OverlayContainer>
                             </ModalOverlay>
                         </ImageContainer >
@@ -505,7 +582,7 @@ const Projects = () => {
                             <ModalOverlay>
                                 <OverlayContainer>
                                     <OverlayText>Bank design template with language/login contexts utilizing the MUI framework. Contains a user dashboard and can request current exchange rates for different currencies.</OverlayText>
-                                    <OverlayButton onClick={toggleModalOne} >See More</OverlayButton>
+                                    <OverlayButton onClick={toggleModalThree} >See More</OverlayButton>
                                 </OverlayContainer>
                             </ModalOverlay>
                         </ImageContainer >
@@ -523,7 +600,7 @@ const Projects = () => {
                             <ModalOverlay>
                                 <OverlayContainer>
                                     <OverlayText>Web app for Fantasy Hockey, contains historic league data and takes live data from Fantrax.com. Has 31 unique style themes that can be toggled at any time.</OverlayText>
-                                    <OverlayButton onClick={toggleModalOne} >See More</OverlayButton>
+                                    <OverlayButton onClick={toggleModalFour} >See More</OverlayButton>
                                 </OverlayContainer>
                             </ModalOverlay>
                         </ImageContainer >
