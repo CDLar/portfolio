@@ -517,8 +517,8 @@ const Projects = () => {
                     >
                         <ModalImage title='Scores assigned to teams based on historic playoff data' style={{ backgroundImage: `url(${gm1})` }} />
                         <ModalImage title='Cards can be flipped to reveal overall league stats' style={{ backgroundImage: `url(${gm2})` }} />
-                        <ModalImage title='Different themes for each NHL team' style={{ backgroundImage: `url(${gm3})` }} />
                         <ModalImage title='Team list with stats for each GM with additional season stats' style={{ backgroundImage: `url(${gm4})` }} />
+                        <ModalImage title='Different themes for each NHL team' style={{ backgroundImage: `url(${gm3})` }} />
                     </Carousel>
                     <ControlsContainer>
                         <ControlsText>A: <ColorText>Previous</ColorText></ControlsText>
