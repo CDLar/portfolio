@@ -217,13 +217,20 @@ transition:transform .5s;
 }
 `
 
+const Resume = styled.a`
+    color:${props => props.theme.high};
+&:active{
+    color:${props => props.theme.high};
+}
+`
+
 const Footer = ({ isOpen }) => {
     return (
         <>
             <Wrapper>
                 <FooterHeader>Thanks!</FooterHeader>
                 <FooterSubheader>Want to get in touch?</FooterSubheader>
-                <ContactButton><a href='' download>My Resume</a></ContactButton>
+                <ContactButton><Resume href={resume} download>My Resume</Resume></ContactButton>
                 <SocialWrapper>
                     <SocialLink rel='noreferrer' target="_blank" href='https://www.linkedin.com/in/curtis-larsen-187727b4/'>
                         <SocialInner>
