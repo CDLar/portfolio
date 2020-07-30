@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { FaLinkedinIn, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
-
+import resume from '../resume.pdf'
 
 const Wrapper = styled.div`
 background-color:${props => props.theme.elevated};
@@ -223,7 +223,7 @@ const Footer = ({ isOpen }) => {
             <Wrapper>
                 <FooterHeader>Thanks!</FooterHeader>
                 <FooterSubheader>Want to get in touch?</FooterSubheader>
-                <ContactButton>My Resume</ContactButton>
+                <ContactButton><a href='' download>My Resume</a></ContactButton>
                 <SocialWrapper>
                     <SocialLink rel='noreferrer' target="_blank" href='https://www.linkedin.com/in/curtis-larsen-187727b4/'>
                         <SocialInner>
