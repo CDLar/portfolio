@@ -80,8 +80,11 @@ clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
 `
 
 const CardText = styled.h3`
-margin: 3.2em 0;
-font-size:1.2rem;
+margin: 1.7em 0;
+text-align:center;
+`
+
+const CardSubtext = styled.p`
 text-align:center;
 `
 
@@ -136,6 +139,9 @@ const About = () => {
                         <CardText>
                             React
                         </CardText>
+                        <CardSubtext>
+                            UI/UX Design
+                        </CardSubtext>
                     </CardContent>
                 </Card>
                 <Card>
@@ -144,8 +150,11 @@ const About = () => {
                     </IconContainer>
                     <CardContent>
                         <CardText>
-                            Javascript
+                            Js
                         </CardText>
+                        <CardSubtext>
+                            Focus: Secondary
+                        </CardSubtext>
                     </CardContent>
                 </Card>
                 <Card>
@@ -156,6 +165,9 @@ const About = () => {
                         <CardText>
                             CSS3
                         </CardText>
+                        <CardSubtext>
+                            Focus: Secondary
+                        </CardSubtext>
                     </CardContent>
                 </Card>
                 <Card>
@@ -166,6 +178,9 @@ const About = () => {
                         <CardText>
                             HTML5
                         </CardText>
+                        <CardSubtext>
+                            Focus: Tertiary
+                        </CardSubtext>
                     </CardContent>
                 </Card>
             </CardWrapper>

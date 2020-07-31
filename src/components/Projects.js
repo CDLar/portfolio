@@ -258,55 +258,127 @@ font-size:0.9rem;
 const ModalImage = styled.div`
 background-size: 100% 100%;
 cursor:default;
-width:64em;
-height:32em;
+width:80em;
+height:40em;
+@media(max-width: 1400px){
+    width:70em;
+    height:35em;
+}
+@media(max-width: 1200px){
+    width:64em;
+    height:32em;
+}
+@media(max-width: 1140px){
+    width:61em;
+    height:28em;
+}
 @media(max-width: 1075px){
-    width:50em;
+    width:56em;
     height:25em;
 }
 @media(max-width: 850px){
-    width:40em;
+    width:43em;
     height:20em;
 }
+@media(max-width: 770px){
+    width:39em;
+    height:18em;
+}
 @media(max-width: 690px){
-    width:30em;
-    height:15em;
+    width:35em;
+    height:16em;
+}
+@media(max-width: 610px){
+    width:31.5em;
+    height:14.5em;
 }
 @media(max-width: 530px){
-    width:20em;
+    width:27em;
+    height:13em;
+}
+@media(max-width: 450px){
+    width:25em;
+    height:12em;
+}
+@media(max-width: 400px){
+    width:23em;
+    height:11em;
+}
+@media(max-width: 370px){
+    width:21em;
     height:10em;
 }
-@media(max-width: 375px){
-    width:15em;
-    height:7.5em;
+@media(max-width: 340px){
+    width:19em;
+    height:9em;
+}
+@media(max-width: 310px){
+    width:17em;
+    height:8em;
 }
 `
 
 const StyledContent = styled(DialogContent)`
-width:64em;
-height:32em;
+width:80em;
+height:40em;
 padding:0;
 border-radius:5px;
 animation: ${fade} .2s ease-in;
+@media(max-width: 1400px){
+    width:70em;
+    height:35em;
+}
+@media(max-width: 1200px){
+    width:64em;
+    height:32em;
+}
+@media(max-width: 1140px){
+    width:61em;
+    height:28em;
+}
 @media(max-width: 1075px){
-    width:50em;
+    width:56em;
     height:25em;
 }
 @media(max-width: 850px){
-    width:40em;
+    width:43em;
     height:20em;
 }
+@media(max-width: 770px){
+    width:39em;
+    height:18em;
+}
 @media(max-width: 690px){
-    width:30em;
-    height:15em;
+    width:35em;
+    height:16em;
+}
+@media(max-width: 610px){
+    width:31.5em;
+    height:14.5em;
 }
 @media(max-width: 530px){
-    width:20em;
+    width:27em;
+    height:13em;
+}
+@media(max-width: 450px){
+    width:25em;
+    height:12em;
+}
+@media(max-width: 400px){
+    width:23em;
+    height:11em;
+}
+@media(max-width: 370px){
+    width:21em;
     height:10em;
 }
-@media(max-width: 375px){
-    width:15em;
-    height:7.5em;
+@media(max-width: 340px){
+    width:19em;
+    height:9em;
+}
+@media(max-width: 310px){
+    width:17em;
+    height:8em;
 }
 `
 
@@ -332,13 +404,7 @@ font-weight:700;
     font-size:1rem;
 }
 @media(max-width: 690px){
-    font-size:0.9rem;
-}
-@media(max-width: 530px){
-    font-size:0.8rem;
-}
-@media(max-width: 375px){
-    font-size:0.7rem;
+    display:none;
 }
 `
 
@@ -354,7 +420,7 @@ border:none;
 const TextPrimary = styled.h3`
 font-size:1.3rem;
 color: ${props => props.theme.high};
-letter-spacing:1.5px;
+letter-spacing:1px;
 font-weight:300;
 margin-bottom:2rem;
 display:block;
