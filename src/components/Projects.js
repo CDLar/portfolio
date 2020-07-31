@@ -381,6 +381,7 @@ display:block;
 
 const StyledExternal = styled(FaExternalLinkAlt)`
 font-size:1.2rem;
+color:${props => props.theme.high};
 margin-top:0.1em;
 @media (max-width: 475px) {
     font-size:0.8rem;
@@ -389,6 +390,7 @@ margin-top:0.1em;
 `
 
 const StyledCode = styled(FaCode)`
+color:${props => props.theme.high};
 font-size:1.55rem;
 @media (max-width: 475px) {
     font-size:1rem;
@@ -561,7 +563,7 @@ const Projects = () => {
                             <ProjectImage onClick={toggleModalTwo} style={{ backgroundImage: `url(${battler1})` }} />
                             <ModalOverlay>
                                 <OverlayContainer>
-                                    <OverlayText>App with two main functionalities, can display most popular Github repos based on programming language, or choose two Github profiles to battle.</OverlayText>
+                                    <OverlayText>App with two main functionalities, can display most popular Github repos based on programming language, or choose two Github profiles to battle. Coding project from UI.dev.</OverlayText>
                                     <OverlayButton onClick={toggleModalTwo} >See More</OverlayButton>
                                 </OverlayContainer>
                             </ModalOverlay>
