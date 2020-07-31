@@ -25,7 +25,7 @@ flex-wrap:nowrap;
 @media (max-width: 980px) {
 flex-wrap:wrap;
   }
-  @media (max-width: 580px) {
+  @media (max-width: 656px) {
 display:none;
   }
 `
@@ -46,7 +46,7 @@ letter-spacing: 2px;
     padding-top: 0.35em; 
     border-bottom: 3px solid white;
 }
-@media (max-width: 580px) {
+@media (max-width: 656px) {
 margin-bottom:3rem;
 }
 `
