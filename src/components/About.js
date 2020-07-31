@@ -86,6 +86,7 @@ text-align:center;
 
 const CardSubtext = styled.p`
 text-align:center;
+font-size:0.9rem;
 `
 
 const InfoWrapper = styled.div`
@@ -153,7 +154,7 @@ const About = () => {
                             Js
                         </CardText>
                         <CardSubtext>
-                            Focus: Secondary
+                            Client / Server Scripts
                         </CardSubtext>
                     </CardContent>
                 </Card>
@@ -166,7 +167,7 @@ const About = () => {
                             CSS3
                         </CardText>
                         <CardSubtext>
-                            Focus: Secondary
+                            Styling / Animation
                         </CardSubtext>
                     </CardContent>
                 </Card>
@@ -179,7 +180,7 @@ const About = () => {
                             HTML5
                         </CardText>
                         <CardSubtext>
-                            Focus: Tertiary
+                            Web Development
                         </CardSubtext>
                     </CardContent>
                 </Card>
