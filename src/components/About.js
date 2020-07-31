@@ -25,7 +25,9 @@ flex-wrap:nowrap;
 @media (max-width: 980px) {
 flex-wrap:wrap;
   }
-
+  @media (max-width: 580px) {
+display:none;
+  }
 `
 
 const Header = styled.h1`
@@ -43,6 +45,9 @@ letter-spacing: 2px;
     width: 45%; 
     padding-top: 0.35em; 
     border-bottom: 3px solid white;
+}
+@media (max-width: 580px) {
+margin-bottom:3rem;
 }
 `
 
@@ -75,11 +80,8 @@ clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
 `
 
 const CardText = styled.h3`
-margin: 1.7em 0;
-text-align:center;
-`
-
-const CardSubtext = styled.p`
+margin: 3.2em 0;
+font-size:1.2rem;
 text-align:center;
 `
 
@@ -134,9 +136,6 @@ const About = () => {
                         <CardText>
                             React
                         </CardText>
-                        <CardSubtext>
-                            Focus: Primary
-                        </CardSubtext>
                     </CardContent>
                 </Card>
                 <Card>
@@ -145,11 +144,8 @@ const About = () => {
                     </IconContainer>
                     <CardContent>
                         <CardText>
-                            Js
+                            Javascript
                         </CardText>
-                        <CardSubtext>
-                            Focus: Secondary
-                        </CardSubtext>
                     </CardContent>
                 </Card>
                 <Card>
@@ -160,9 +156,6 @@ const About = () => {
                         <CardText>
                             CSS3
                         </CardText>
-                        <CardSubtext>
-                            Focus: Secondary
-                        </CardSubtext>
                     </CardContent>
                 </Card>
                 <Card>
@@ -173,9 +166,6 @@ const About = () => {
                         <CardText>
                             HTML5
                         </CardText>
-                        <CardSubtext>
-                            Focus: Tertiary
-                        </CardSubtext>
                     </CardContent>
                 </Card>
             </CardWrapper>
