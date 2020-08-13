@@ -173,8 +173,8 @@ const Skills = () => {
               <SkillText>
                 My main area of expertice is front end development. I keep up
                 with all the latest features of <ColorText>React</ColorText>,{" "}
-                <ColorText>React Native</ColorText>
-                <ColorText>Javascript</ColorText>, <ColorText>CSS</ColorText>,{" "}
+                <ColorText>React Native</ColorText>,
+                <ColorText> Javascript</ColorText>, <ColorText>CSS</ColorText>,{" "}
                 <ColorText>HTML</ColorText>, and <ColorText>Redux</ColorText>.
                 This includes, and is not limited to, React Hooks/Router, ES6,
                 HTML5, CSS3, and complex state management.
