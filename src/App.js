@@ -7,7 +7,7 @@ import {
   FaMobileAlt,
   FaUser,
   FaHome,
-  FaPencilRuler
+  FaPencilRuler,
 } from "react-icons/fa";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -17,10 +17,10 @@ import Skills from "./components/Skills";
 
 //SC Styles
 const Main = styled.div`
-  background-color: ${props => props.theme.elevated};
+  background-color: ${(props) => props.theme.elevated};
   overflow: hidden;
   height: 100vh
-    ${props =>
+    ${(props) =>
       props.delay &&
       css`
         height: auto;
@@ -36,7 +36,7 @@ const MenuToggle = styled.span`
   cursor: pointer;
   width: 6.25em;
   height: 5em;
-  background-color: ${props => props.theme.primary};
+  background-color: ${(props) => props.theme.primary};
   border-bottom-right-radius: 100%;
 `;
 
@@ -49,7 +49,7 @@ const StyledOpen = styled(FaBars)`
   margin-left: -12px;
   transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
   transform-origin: -100px -100px;
-  ${props =>
+  ${(props) =>
     props.isOpen &&
     css`
       transform: rotate(-20deg);
@@ -65,7 +65,7 @@ const StyledClose = styled(FaTimes)`
   margin-left: -12px;
   transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
   transform-origin: -100px -160px;
-  transform: ${props => (props.isOpen ? "rotate(0deg)" : "rotate(20deg)")};
+  transform: ${(props) => (props.isOpen ? "rotate(0deg)" : "rotate(20deg)")};
 `;
 
 const MenuItems = styled.ul`
@@ -83,7 +83,7 @@ const MenuItem = styled.li`
   height: 7.95vh;
   transform: translateX(-300px);
   transition: transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
-  ${props =>
+  ${(props) =>
     props.isOpen &&
     css`
       transform: translateX(0);
@@ -91,19 +91,19 @@ const MenuItem = styled.li`
     `}
   &:nth-child(2) {
     margin-left: 2em;
-    transition-delay: ${props => (props.isOpen ? "0.47s" : "0")};
+    transition-delay: ${(props) => (props.isOpen ? "0.47s" : "0")};
   }
   &:nth-child(3) {
     margin-left: 4em;
-    transition-delay: ${props => (props.isOpen ? "0.48s" : "0")};
+    transition-delay: ${(props) => (props.isOpen ? "0.48s" : "0")};
   }
   &:nth-child(4) {
     margin-left: 6em;
-    transition-delay: ${props => (props.isOpen ? "0.49s" : "0")};
+    transition-delay: ${(props) => (props.isOpen ? "0.49s" : "0")};
   }
   &:nth-child(5) {
     margin-left: 8em;
-    transition-delay: ${props => (props.isOpen ? "0.49s" : "0")};
+    transition-delay: ${(props) => (props.isOpen ? "0.49s" : "0")};
   }
 `;
 
@@ -114,10 +114,10 @@ const MenuLink = styled.a`
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: "Raleway", sans-serif;
-  color: ${props => props.theme.medium};
+  color: ${(props) => props.theme.medium};
   transition: color 0.2s;
   &:hover {
-    color: ${props => props.theme.high};
+    color: ${(props) => props.theme.high};
     cursor: pointer;
   }
 `;
@@ -125,15 +125,15 @@ const MenuLink = styled.a`
 const Content = styled.main`
   transform-origin: top left;
   transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
-  background-color: ${props => props.theme.background};
+  background-color: ${(props) => props.theme.background};
   overflow: auto;
   height: 200vh;
-  ${props =>
+  ${(props) =>
     props.delay &&
     css`
       height: auto;
     `}
-  ${props =>
+  ${(props) =>
     props.isOpen &&
     css`
       transform: rotate(-30deg);
@@ -142,7 +142,7 @@ const Content = styled.main`
 
 const Filler = styled.div`
   height: 100vh;
-  background-color: ${props => props.theme.elevated};
+  background-color: ${(props) => props.theme.elevated};
 `;
 
 const iconStyles = `
@@ -187,10 +187,9 @@ function App() {
   const contactRef = useRef();
   const contentRef = useRef();
 
-  const scrollTo = ref => ref.current.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
 
   useLayoutEffect(() => {
-    console.log(savedPos);
     if (isOpen) {
       contentRef.current.scrollTo(0, savedPos);
     } else if (!isOpen) {
@@ -212,7 +211,7 @@ function App() {
     setSavedPos(contentRef.current.scrollTop);
   };
 
-  const handleClick = ref => {
+  const handleClick = (ref) => {
     toggleClose();
     setTimeout(() => {
       scrollTo(ref);
