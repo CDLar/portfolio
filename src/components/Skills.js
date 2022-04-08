@@ -8,7 +8,7 @@ import skillTreeDev from "../images/skilltreeDev.png";
 import skillTreeDesign from "../images/skilltreeDesign.png";
 
 const Wrapper = styled.div`
-  background-color: ${props => props.theme.background};
+  background-color: ${(props) => props.theme.background};
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${props => props.theme.high};
+  color: ${(props) => props.theme.high};
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -88,11 +88,11 @@ const SkillsWrapper = styled.div`
   }
 `;
 const ColorText = styled.span`
-  color: ${props => props.theme.primaryV};
+  color: ${(props) => props.theme.primaryV};
 `;
 const SkillText = styled.p`
   font-size: 0.85rem;
-  color: ${props => props.theme.high};
+  color: ${(props) => props.theme.high};
 `;
 
 const SkillWrapper = styled.div`
@@ -102,7 +102,7 @@ const SkillWrapper = styled.div`
   transition: all 0.3s;
   max-width: 27rem;
   filter: grayscale(30%);
-  color: ${props => props.theme.high};
+  color: ${(props) => props.theme.high};
   &:hover {
     transform: scale(1.2);
     filter: grayscale(0%);
@@ -173,11 +173,12 @@ const Skills = () => {
               <SkillText>
                 My main area of expertice is front end development. I keep up
                 with all the latest features of <ColorText>React</ColorText>,{" "}
-                <ColorText>React Native</ColorText>,
+                <ColorText>Typescript</ColorText>,
                 <ColorText> Javascript</ColorText>, <ColorText>CSS</ColorText>,{" "}
-                <ColorText>HTML</ColorText>, and <ColorText>Redux</ColorText>.
-                This includes, and is not limited to, React Hooks/Router, ES6,
-                HTML5, CSS3, and complex state management.
+                <ColorText>HTML</ColorText>, <ColorText>GraphQL</ColorText>, and{" "}
+                <ColorText>Redux</ColorText>. This includes, and is not limited
+                to, React Hooks/Router, ES6, HTML5, CSS3, and complex state
+                management.
               </SkillText>
             </Fade>
           </SkillWrapper>
